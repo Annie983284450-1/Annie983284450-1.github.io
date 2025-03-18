@@ -34,7 +34,8 @@ content:
       tag: CV
     - name: NLP
       tag: NLP
-
+    - name: Reinforcement Learning 
+      tag: RL
 design:
   columns: '1'
   view: masonry
