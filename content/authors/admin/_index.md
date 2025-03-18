@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Alice Wu (吳恩達)
+title: Annie Zhou  
 
 # Is this the primary user of the site?
 superuser: true
@@ -10,32 +10,29 @@ role: ''
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: ☕💃
 
 # Organizations/Affiliations
 #organizations:
-#- name: 腾讯
+#- name: ""
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include reinforcemenr learning, deep learning, bioinformatics and uncertainty quantification.
 
 #interests:
 #- Artificial Intelligence
-#- Computational Linguistics
+#- reinforcement Learning
 #- Information Retrieval
 
 #education:
 #  courses:
-#  - course: PhD in Artificial Intelligence
-#    institution: Stanford University
-#    year: 2012
-#  - course: MEng in Artificial Intelligence
-#    institution: Massachusetts Institute of Technology
-#    year: 2009
-#  - course: BSc in Artificial Intelligence
-#    institution: Massachusetts Institute of Technology
-#    year: 2008
+#  - course: PhD in Electrical and Computer Engineering
+#    institution: Georgia Institute of Technology
+#    year: 2025
+#  - course: BSc in Electrical and Computer Engineering
+#    institution: Huazhong University of Science and Technology 
+#    year: 2018
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
