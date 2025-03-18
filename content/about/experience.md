@@ -14,7 +14,7 @@ subtitle:
 
 # Date format for experience
 #   Refer to https://docs.hugoblox.com/customization/#date-format
-date_format: Jan 2006
+date_format: Mar 2025
 
 # Experiences.
 #   Add/remove as many `experience` items below as you like.
@@ -22,28 +22,27 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: CEO
-    company: GenCoin
-    company_url: ''
-    company_logo: org-gc
-    location: California
-    date_start: '2021-01-01'
+  - title: Research Intern
+    company: North Carolina State University
+    company_url: 'https://nicelab.us/NICE-LAB/'
+    # company_logo: org-gc
+    # location: California
+    date_start: '2024-12-20'
     date_end: ''
     description: |2-
         Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
+       * Developing a novel classification-assisted prediction model integrating physical information like irrigation data, achieving superior performance in image-based plant growth prediction.
+         * Introducing a new Pixel-of-Interest (POI) evaluation metric to assess model accuracy from a physical perspective, enhancing decision-making in agricultural research.
+         * Conducting experiments using large datasets, employing advanced machine learning frameworks (e.g., \textbf{ConvLSTM, PredRNN}) for robust plant growth analysis and prediction.
 
-  - title: Professor of Semiconductor Physics
-    company: University X
+  - title: Graduate Teaching and Research Assistant
+    company: Georgia Institute of Technology
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    # company_logo: org-x
+    location: Atlanta
+    date_start: '2018-08-31'
+    date_end: '2025-01-10'
+    description: TA of Cyber-Physical System Security and researched Machine Learning, Reinforcement Learning, Deep Learning and Conformal Prediction.
 
 design:
   columns: '1'
