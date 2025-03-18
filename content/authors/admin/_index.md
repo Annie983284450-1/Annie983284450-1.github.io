@@ -2,6 +2,8 @@
 # Display name
 title: Annie Zhou  
 
+first_namne: Annie
+last_name: Zhou
 # Is this the primary user of the site?
 superuser: true
 
