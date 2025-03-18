@@ -14,7 +14,7 @@ subtitle:
 
 # Date format for experience
 #   Refer to https://docs.hugoblox.com/customization/#date-format
-date_format: Jan 2006
+date_format: Mar 2025
 
 # Experiences.
 #   Add/remove as many `experience` items below as you like.
