@@ -7,9 +7,7 @@ redirect_from:
   - /about.html
 ---
 
- 
-My name is Anni Zhou, and I am completing my Ph.D. in Electrical and Computer Engineering at Georgia Tech (degree expected May 2025, defense finished). I have over eight years of experience specializing in machine learning, reinforcement learning, statistical modeling, and uncertainty quantification. 
-My research has consistently focused on developing scalable, robust ML models for critical applications such as healthcare, specifically leveraging advanced uncertainty quantification techniques and reinforcement learning to enhance decision-making in real-world scenarios.
+My name is Anni Zhou, and I am a Ph.D. in Electrical and Computer Engineering at Georgia Tech. I have over eight years of experience specializing in machine learning, reinforcement learning, statistical modeling, and uncertainty quantification. My research has consistently focused on developing scalable, robust ML models for critical applications such as healthcare, specifically leveraging advanced uncertainty quantification techniques and reinforcement learning to enhance decision-making in real-world scenarios.
 
 Education
 ======
