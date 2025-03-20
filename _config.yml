@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Anni(Annie) Zhou / Portfolio"
+title                    : "Annie Zhou / 周安妮"
 title_separator          : "-"
 name                     : &name "Anni Zhou"
 description              : &description "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis. Enthusiastic about advancing AI methodologies for real-world applications."
@@ -24,7 +24,7 @@ author:
   # Biographic information
   # original profile.png
   avatar           : "anniezhou.jpg"
-  name             : "Anni(Annie) Zhou"
+  name             : "Annie Zhou"
   pronouns         : # example: "she/her"  
   bio              : "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis."
   location         : # "Earth"
