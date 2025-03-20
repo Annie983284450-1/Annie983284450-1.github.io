@@ -2,7 +2,7 @@
 title: "Graduate Teaching Assistant"
 collection: teaching
 type: "Graduate course"
-permalink: /teaching/2019-spring-teaching-1
+permalink: /teaching/2019-spring-teaching
 venue: "Georgia Institute of Technology, Computer Science, 2019 - "
 date: 2022-01-01
 location: "Atlanta, United States"
