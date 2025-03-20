@@ -1,7 +1,7 @@
 ---
 title: "A secure and authenticated mobile payment protocol against off-site attack strategy"
 collection: publications
-# category: manuscripts
+category: 
 permalink: /publication/2025-03-19-paper-title-number-4
 excerpt: 'A secure and authenticated payment protocol, using time and position as necessary conditions for the payment confirmation'
 date: 2021-01-01
