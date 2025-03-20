@@ -1,14 +1,14 @@
 ---
-title: "Paper Title Number 2"
+title: "T-PriDO: A Tree-based Privacy-Preserving and Contextual Collaborative Online Big Data Processing System"
 collection: publications
-category: manuscripts
-permalink: /publication/2025-03-19-paper-title-number-2
+category: conferences
+permalink: /publication/2025-03-19-paper-title-number-1
 excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2025-03-19
-venue: 'Journal 1'
-slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+date: 2018-05-30
+venue: 'IEEE Conference on Communications and Network Security '
+# slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/8433149'
+citation: 'Zhou, Anni, Pan Zhou, Dapeng Wu, Yuchong Hu, and Shouling Ji. "T-PriDO: A Tree-based Privacy-Preserving and Contextual Collaborative Online Big Data Processing System." In 2018 IEEE Conference on Communications and Network Security (CNS), pp. 1-9. IEEE, 2018.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+In this paper, we propose a cloud-based big data processing framework, where service providers are modeled as distributed cooperative learners predicting users' preferences of items based on users' contexts, while adapting the decision-making strategy based on users' reward. We establish an item-cluster tree from top to the bottom to handle big data analysis. Service providers share information over a social network to complete collaborative learning. Considering the structure of the social networks among service providers, we also propose an adaptive algorithm to reduce the performance loss. Theoretical analysis shows that our proposal achieves sublinear regret and differential privacy of both network service providers and users. Experiments results validate that our proposed algorithms support increasing big datasets while strike a balance between privacy-preserving level and prediction accuracy.

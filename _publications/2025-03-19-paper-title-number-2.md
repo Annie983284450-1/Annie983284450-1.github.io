@@ -1,13 +1,13 @@
 ---
-title: "Paper Title Number 4"
+title: "OnAI-comp: an online ai experts competing framework for early sepsis detection"
 collection: publications
-category: conferences
-permalink: /publication/2025-03-19-paper-title-number-4
+category: manuscripts
+permalink: /publication/2025-03-19-paper-title-number-2
 excerpt: 'This paper is about fixing template issue #693.'
-date: 2025-03-19
-venue: 'GitHub Journal of Bugs'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+date: 2021-10-26
+venue: 'IEEE/ACM transactions on computational biology and bioinformatics'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/9585428'
+citation: 'Zhou, Anni, Raheem Beyah, and Rishikesan Kamaleswaran. "OnAI-comp: an online ai experts competing framework for early sepsis detection." IEEE/ACM transactions on computational biology and bioinformatics 19, no. 6 (2021): 3595-3603.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+TSepsis is a major public concern due to its high mortality, morbidity, and financial cost. There are many existing works of early sepsis prediction using different machine learning models to mitigate the outcomes brought by sepsis. In the practical scenario, the dataset grows dynamically as new patients visit the hospital. Most existing models, being “offline” models and having used retrospective observational data, cannot be updated and improved dynamically using the new observational data. Incorporating the new data to improve the offline models requires retraining the model, which is very computationally expensive. To solve the challenge mentioned above, we propose an Online Artificial Intelligence Experts Competing Framework (OnAI-Comp) for early sepsis detection using an online learning algorithm called Multi-armed Bandit. We selected several machine learning models as the artificial intelligence experts and used average regret to evaluate the performance of our model. The experimental analysis demonstrated that our model would converge to the optimal strategy in the long run. Meanwhile, our model can provide clinically interpretable predictions using existing local interpretable model-agnostic explanation technologies, which can aid clinicians in making decisions and might improve the probability of survival.
