@@ -27,7 +27,7 @@ author:
   name             : "Anni(Annie) Zhou"
   pronouns         : # example: "she/her"  
   bio              : "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis."
-  location         : "Earth"
+  location         : # "Earth"
   employer         : "Georgia Institute of Technology"
   uri              : # URL
   email            : "azhou60@gatech.edu" 
@@ -36,7 +36,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=g_gIBgMAAAAJ&hl=en&oi=sra"
   impactstory      : # URL
-  orcid            : # URL
+  orcid            : " https://orcid.org/0000-0001-9295-1660" # URL
   semantic         : # URL
   pubmed           : # URL
   researchgate     : # URL
