@@ -1,7 +1,7 @@
 ---
 title: "Social intimacy based IoT services mining of massive data"
 collection: publications
-category:  
+# category:  
 permalink: /publication/2025-03-19-paper-title-number-6
 excerpt: 'An online learning system for IoT service recommendation based on a contextual multi-armed bandit algorithm'
 date: 2017-11-18
