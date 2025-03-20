@@ -2,7 +2,7 @@
 title: "A privacy-preserving online learning approach for incentive-based demand response in smart grid"
 collection: publications
 # category:  
-permalink: /publication/2025-03-19-paper-title-number-3
+permalink: /publication/2019-02-14-smartgrid
 excerpt: 'An online privacy-preserving IDR management system, in which social welfare is maximized through recommending the optimal consumer to the utility company'
 date: 2019-02-14
 venue: 'IEEE Systems Journal'

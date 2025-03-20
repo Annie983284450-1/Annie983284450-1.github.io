@@ -2,9 +2,9 @@
 title: "A secure and authenticated mobile payment protocol against off-site attack strategy"
 collection: publications
 # category: 
-permalink: /publication/2025-03-19-paper-title-number-4
+permalink: /publication/2021-08-04-off-site-attack
 excerpt: 'A secure and authenticated payment protocol, using time and position as necessary conditions for the payment confirmation'
-date: 2021-01-01
+date: 2021-08-04
 venue: 'IEEE Transactions on Dependable and Secure Computing'
 # slidesurl: ''
 paperurl: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9507277&casa_token=PRvWsNXbV54AAAAA:ZifrIcjZwo-NjbV3fTjLMGJakE7nRhyqPgfO0J0X0TuJBfa-1139a8JmKrNjdEIKAEzQVQwC&tag=1'

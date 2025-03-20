@@ -4,7 +4,7 @@ collection: publications
 # uncomment below if you want to categorize the publications
 # also uncomment the category in _config.yml 
 # category:  
-permalink: /publication/2025-03-19-paper-title-number-6
+permalink: /publication/2025-03-18-Sepsyn-OLCP
 excerpt: 'A novel online learning algorithm for early sepsis prediction by integrating conformal prediction for uncertainty quantification and Bayesian bandits for adaptive decision-making'
 date: 2025-03-18
 venue: 'arXiv'
