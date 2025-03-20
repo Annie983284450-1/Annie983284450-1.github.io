@@ -1,7 +1,7 @@
 ---
 title: "Sepsyn-OLCP: An Online Learning-based Framework for Early Sepsis Prediction with Uncertainty Quantification using Conformal Prediction"
 collection: publications
-category: manuscript
+category: manuscripts
 permalink: /publication/2025-03-19-paper-title-number-6
 excerpt: 'A novel online learning algorithm for early sepsis prediction by integrating conformal prediction for uncertainty quantification and Bayesian bandits for adaptive decision-making'
 date: 2025-03-18
