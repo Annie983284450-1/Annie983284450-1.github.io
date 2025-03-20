@@ -3,8 +3,8 @@ title: "Graduate Teaching Assistant"
 collection: teaching
 type: "Graduate course"
 permalink: /teaching/2019-spring-teaching-1
-venue: "Georgia Institute of Technology, Computer Science"
-date: 2019-01-01
+venue: "Georgia Institute of Technology, Computer Science, 2019 - "
+date: 2022-01-01
 location: "Atlanta, United States"
 ---
 * Worked with the TA team to provide an introduction to security issues relating to various cyber‑physical
