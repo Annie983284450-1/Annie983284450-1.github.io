@@ -1,7 +1,7 @@
 ---
 title: "OnAI-comp: an online ai experts competing framework for early sepsis detection"
 collection: publications
-category: manuscripts
+# category: manuscripts
 permalink: /publication/2025-03-19-paper-title-number-2
 excerpt: 'An Online Artificial Intelligence Experts Competing Framework (OnAI-Comp) for early sepsis detection via online learning'
 date: 2021-10-26

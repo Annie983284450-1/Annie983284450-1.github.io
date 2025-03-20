@@ -1,7 +1,7 @@
 ---
 title: "T-PriDO: A Tree-based Privacy-Preserving and Contextual Collaborative Online Big Data Processing System"
 collection: publications
-category: conferences
+# category: conferences
 permalink: /publication/2025-03-19-paper-title-number-1
 excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 date: 2018-05-30
