@@ -1,5 +1,24 @@
 {% include base_path %}
 
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    <li>
+      <a href="https://github.com/{{ site.author.github }}">
+        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">
+  &copy; {{ site.time | date: '%Y' }} Anni Zhou. All rights reserved.<br />
+  Site last updated {{ "now" | date: '%Y-%m-%d' }}
+</div>
+
+
+
+<!-- {% include base_path %}
+
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
 <div class="page__footer-follow">
   <ul class="social-icons">
@@ -22,4 +41,4 @@
 <div class="page__footer-copyright">
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
   Site last updated {{ "now" | date: '%Y-%m-%d' %}}
-</div>
+</div> -->
