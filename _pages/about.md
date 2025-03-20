@@ -11,6 +11,6 @@ My name is Anni Zhou, and I am a Ph.D. in Electrical and Computer Engineering at
 
 Education
 ======
-Ph. D. in Electrical and Computer Engineering, Georgia Institute of Technology
-B.S. in Electrical and Computer Engineering, Huazhong University of Science and Technology
+* Ph. D. in Electrical and Computer Engineering, Georgia Institute of Technology 
+* B.S. in Electrical and Computer Engineering, Huazhong University of Science and Technology
 
