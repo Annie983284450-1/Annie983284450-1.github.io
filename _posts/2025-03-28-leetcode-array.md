@@ -1,11 +1,12 @@
 ---
-title: 'Blog Post number 1'
-date: 2012-08-14
-permalink: /posts/2012/08/blog-post-1/
+title: 'Leetcode Array Problems'
+date: 2015-08-14
+# permalink: /posts/2012/08/blog-post-4/ (example)
+permalink: /posts/2025/03/28/leetcode-array 
 tags:
-  - cool posts
-  - category1
-  - category2
+  - leetcode
+  - array
+  - study notes
 ---
 
 This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
