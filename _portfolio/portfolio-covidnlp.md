@@ -2,6 +2,7 @@
 title: "Auditing ML and NLP Techniques to Study Twitter Racism/Hate during CoVID-19 Pandemic"
 excerpt: "A deep learning model which distinguishes between Hostililty against East Asia, Criticism of East Asia, Discussion of East Asian prejudice and Neutral content<br/><img src='/images/nlpcovid.png'>"
 collection: portfolio
+date: 2023-04-20
 ---
 [Project Code](https://github.com/Annie983284450-1/Auditing-ML-Techniques-to-Study-Twitter-Racism-during-COVID-19-Pandemic-.git)
 
