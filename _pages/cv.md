@@ -55,7 +55,15 @@ Talks
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul> -->
+
+
   
+Certificates
+======
+  <ul>{% for post in site.certificates reversed %}
+    {% include archive-single-cv.html  %}
+  {% endfor %}</ul>
+   
 Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
