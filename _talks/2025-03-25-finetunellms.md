@@ -1,6 +1,6 @@
 ---
 title: "Talk 1 on Relevant Topic in Your Field"
-collection: certificates
+collection: talks
 type: "Certificates"
 permalink: /certificates/2025-03-25-finetunellms.md
 venue: "Fine-Tuning for LLMs: from Beginner to Advanced"

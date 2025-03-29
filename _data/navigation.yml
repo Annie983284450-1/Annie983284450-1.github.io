@@ -18,10 +18,10 @@ main:
     url: /publications/
 
   - title: "Certificates"
-    url: /certificates/    
+    url: /talks/    
 
-  - title: "Talks"
-    url: /talks/ 
+  # - title: "Talks"
+  #   url: /talks/ 
 
   - title: "Teaching"
     url: /teaching/    
