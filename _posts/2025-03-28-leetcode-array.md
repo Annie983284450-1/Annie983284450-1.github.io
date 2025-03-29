@@ -1,6 +1,6 @@
 ---
 title: 'Leetcode Array Problems'
-date: 2015-08-14
+date: 2025-03-28
 # permalink: /posts/2012/08/blog-post-4/ (example)
 permalink: /posts/2025/03/28/leetcode-array 
 tags:
