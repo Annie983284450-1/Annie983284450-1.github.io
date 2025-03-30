@@ -1,6 +1,6 @@
 ---
 title: 'Future Blog Post'
-date: 2199-01-01
+date: 2025-03-30
 permalink: /posts/2025/03/leetcode-array/
 tags:
   - leetcode
