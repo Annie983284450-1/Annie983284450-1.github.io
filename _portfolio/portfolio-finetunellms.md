@@ -2,6 +2,7 @@
 title: "Fine-Tuning Large Language Models for NLP Tasks"
 excerpt: "Fine-tuning Large Language Models (LLMs) for various NLP tasks, from simple prompting methods to advanced fine-tuning techniques."
 collection: portfolio
+date: 2025-03-28
 ---
 [Project Code](https://github.com/Annie983284450-1/Fine-Tuning-LLMs)
 
