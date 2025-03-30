@@ -1,6 +1,6 @@
 ---
 title: 'Future Blog Post'
-date: 2025-03-30
+date: 2199-03-30
 permalink: /posts/2025/03/leetcode-array/
 tags:
   - leetcode
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-title: 'Leetcode Array Problems'
+<!-- title: 'Leetcode Array Problems'
 date: 2025-03-30
 <!-- # permalink: /posts/2012/08/blog-post-4/ (example) -->
 permalink: /posts/2025/03/28/leetcode-array 
@@ -17,7 +17,7 @@ tags:
   - leetcode
   - array
   - study notes
----
+--- -->
 
  
 Array Basics
