@@ -8,7 +8,34 @@ tags:
   - study notes
 ---
 
-This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`. 
+
+title: 'Leetcode Array Problems'
+date: 2025-03-30
+# permalink: /posts/2012/08/blog-post-4/ (example)
+permalink: /posts/2025/03/28/leetcode-array 
+tags:
+  - leetcode
+  - array
+  - study notes
+---
+
+ 
+Array Basics
+======
+
+Arrays are basic data structures. Notes:
+
+
+- Arrays are stored continuous on memory
+- In python, arrays are mutable
+
+
+ 
+
+
+
+
+<!-- This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`.  -->
 
 
 <!-- ## examples for post
@@ -33,3 +60,5 @@ You can have many headings
 
 Aren't headings cool?
 ------ -->
+
+
