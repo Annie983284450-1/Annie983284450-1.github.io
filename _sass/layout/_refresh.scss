@@ -726,9 +726,19 @@ body {
   padding-bottom: 0;
 }
 
-#main { flex: 1 0 auto; }
+#main, main { flex: 1 0 auto; }
 
-.page__footer { flex-shrink: 0; }
+/* Template's legacy footer uses position: absolute to work with a now-removed
+   JS margin-bumper. Override it back to normal flow so our flex column works. */
+.page__footer {
+  flex-shrink: 0;
+  position: static;
+  float: none;
+  margin-top: auto; /* push the footer to the bottom when content is short */
+  bottom: auto;
+  width: 100%;
+  clear: both;
+}
 
 /* ==========================================================================
    EDITORIAL LAYER
