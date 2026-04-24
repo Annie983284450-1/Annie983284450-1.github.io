@@ -54,6 +54,16 @@ html[data-theme="dark"] {
     --accent                            : #7fb3ff;
     --accent-soft                       : #{rgba(#7fb3ff, 0.12)};
     --accent-on                         : #0b1220;
+
+    /* Secondary accent palette — dark mode */
+    --accent-2                          : #ea8c6f;
+    --accent-2-soft                     : #{rgba(#ea8c6f, 0.14)};
+    --accent-3                          : #98c693;
+    --accent-3-soft                     : #{rgba(#98c693, 0.14)};
+    --accent-4                          : #e6b666;
+    --accent-4-soft                     : #{rgba(#e6b666, 0.14)};
+    --accent-5                          : #b292d8;
+    --accent-5-soft                     : #{rgba(#b292d8, 0.14)};
     --surface                           : #1a1d21;
     --surface-muted                     : #15181c;
     --surface-raised                    : #22262c;

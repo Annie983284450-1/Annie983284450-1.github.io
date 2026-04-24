@@ -47,6 +47,16 @@ $sidebar-screen-min-width   : 1024px;
     --accent                            : #1f4b7a;
     --accent-soft                       : #{rgba(#1f4b7a, 0.08)};
     --accent-on                         : #ffffff;
+
+    /* Secondary accent palette — warm, editorial */
+    --accent-2                          : #c2542f;  /* terracotta — agriculture / projects */
+    --accent-2-soft                     : #{rgba(#c2542f, 0.08)};
+    --accent-3                          : #4f7a4c;  /* sage — education / teaching / news */
+    --accent-3-soft                     : #{rgba(#4f7a4c, 0.08)};
+    --accent-4                          : #b8893c;  /* muted gold — highlights / certs */
+    --accent-4-soft                     : #{rgba(#b8893c, 0.1)};
+    --accent-5                          : #6b4a93;  /* plum — blog tags */
+    --accent-5-soft                     : #{rgba(#6b4a93, 0.08)};
     --surface                           : #ffffff;
     --surface-muted                     : #f7f8fa;
     --surface-raised                    : #ffffff;

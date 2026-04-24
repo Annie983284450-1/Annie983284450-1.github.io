@@ -21,9 +21,10 @@ layout: default
   </div>
 
   {% if page.tags.size > 0 %}
-    <div class="post-card__tags" style="margin-top: var(--space-6);">
+    <div class="post__tags" aria-label="Topics">
       {% for tag in page.tags %}
-        <span class="chip chip--tag">{{ tag }}</span>
+        <a class="chip chip--tag chip--{{ forloop.index0 | modulo: 3 }}"
+           href="{{ base_path }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
     </div>
   {% endif %}
@@ -32,6 +33,43 @@ layout: default
     <span>Have thoughts? <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/issues/new?title=Re:%20{{ page.title | url_encode }}" rel="noopener">Discuss on GitHub</a>.</span>
     <a href="{{ base_path }}/blog/">← All posts</a>
   </footer>
+
+  {%- comment -%}
+    Related posts by shared-tag overlap.
+    Score every other post by number of shared tags; pick top 3, newest first on ties.
+  {%- endcomment -%}
+  {% if page.tags.size > 0 %}
+    {% assign related = "" | split: "" %}
+    {% for other in site.posts %}
+      {% if other.url != page.url %}
+        {% assign overlap = 0 %}
+        {% for t in page.tags %}
+          {% if other.tags contains t %}{% assign overlap = overlap | plus: 1 %}{% endif %}
+        {% endfor %}
+        {% if overlap > 0 %}
+          {% capture entry %}{{ overlap }}|{{ other.date | date: "%Y%m%d" }}|{{ other.url }}|{{ other.title }}{% endcapture %}
+          {% assign related = related | push: entry %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% assign related = related | sort | reverse %}
+    {% if related.size > 0 %}
+      <section class="post__related" aria-label="Related posts">
+        <h2 class="home__section-title"><span>Related reading</span></h2>
+        <ul class="post__related-list">
+          {% for entry in related limit: 3 %}
+            {% assign bits = entry | split: "|" %}
+            <li class="post__related-item">
+              <a href="{{ base_path }}{{ bits[2] }}">
+                <span class="post__related-title">{{ bits[3] }}</span>
+                <span class="post__related-meta">{{ bits[1] | slice: 0, 4 }}-{{ bits[1] | slice: 4, 2 }}-{{ bits[1] | slice: 6, 2 }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  {% endif %}
 
   {% if page.previous or page.next %}
     <nav class="post__nav" aria-label="Post navigation">

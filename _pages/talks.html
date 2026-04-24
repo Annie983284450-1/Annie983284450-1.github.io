@@ -1,16 +1,46 @@
 ---
-layout: archive
+layout: default
 title: "Certifications"
 permalink: /talks/
-author_profile: true
+author_profile: false
+body_class: home-page
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<div id="main" role="main" class="home">
+  <header class="page-header reveal">
+    <span class="page-header__eyebrow">Continuing Education</span>
+    <h1 class="page-header__title">Certifications</h1>
+    <p class="page-header__lede">Short-form deep-dives in generative AI, large language models, and responsible-AI practice — taken to stay sharp outside the narrow research focus.</p>
+  </header>
 
-{% endif %}
-
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+  <section class="certs reveal">
+    <ol class="certs__list">
+      {% assign certs = site.talks | sort: 'date' | reverse %}
+      {% for cert in certs %}
+        {% assign cert_link = null %}
+        {% if cert.content contains '](' %}
+          {% assign url_bits = cert.content | split: '](' %}
+          {% if url_bits.size > 1 %}
+            {% assign cert_link = url_bits[1] | split: ')' | first | strip %}
+          {% endif %}
+        {% endif %}
+        <li class="cert-item" style="--stagger: {{ forloop.index0 }}">
+          <div class="cert-item__meta">
+            <time class="cert-item__date" datetime="{{ cert.date | date_to_xmlschema }}">{{ cert.date | date: "%b %Y" }}</time>
+            {% if cert.venue %}<span class="cert-item__venue">{{ cert.venue }}</span>{% endif %}
+          </div>
+          <h2 class="cert-item__title">{{ cert.title }}</h2>
+          {% assign excerpt = cert.content | markdownify | strip_html | strip | truncate: 240 %}
+          {% if excerpt != "" %}
+            <p class="cert-item__excerpt">{{ excerpt }}</p>
+          {% endif %}
+          {% if cert_link %}
+            <a class="cert-item__link" href="{{ cert_link }}" rel="noopener">View certificate <span aria-hidden="true">→</span></a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
