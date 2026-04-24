@@ -1,29 +1,19 @@
 /* ==========================================================================
-   DARK THEME
+   DARK THEME — now a slightly deeper variant of the default kinetic look
+   (kept for users who explicitly toggle, though default is already dark)
    ========================================================================== */
 
-/* Color codes used for the theme */
 $gray                       : #7a8288;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
-
-/* Color codes used for the site */
 $danger-color               : #ee5f5b;
 $info-color                 : #2f7f93;
 $notice-color               : #7a8288;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 
-/* Other basic settings for the template */
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $global-transition          : all 0.2s ease-in-out;
@@ -33,45 +23,48 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
+/* "Dark" toggle flips to a LIGHT, monochrome variant so users who prefer a
+   light surface still have an option. The default (no data-theme attr) is
+   already the dark kinetic palette defined in _default.scss. */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
-    --global-bg-color                   : #1a1d21;
-    --global-border-color               : #2e333a;
-    --global-code-background-color      : #0f1115;
-    --global-code-text-color            : #e2e8f0;
-    --global-fig-caption-color          : #9aa4b2;
-    --global-link-color                 : #7fb3ff;
-    --global-link-color-hover           : #a9cbff;
-    --global-link-color-visited         : #b3c8e4;
-    --global-masthead-link-color        : #e2e8f0;
-    --global-masthead-link-color-hover  : #ffffff;
-    --global-text-color                 : #e6ebf2;
-    --global-text-color-light           : #9aa4b2;
-    --global-thead-color                : #262b31;
+    --global-base-color                 : #4a5568;
+    --global-bg-color                   : #fafafa;
+    --global-border-color               : #e5e7eb;
+    --global-code-background-color      : #f5f5f5;
+    --global-code-text-color            : #1f2937;
+    --global-fig-caption-color          : #6b7280;
+    --global-link-color                 : #0891b2;
+    --global-link-color-hover           : #164e63;
+    --global-link-color-visited         : #0891b2;
+    --global-masthead-link-color        : #1f2937;
+    --global-masthead-link-color-hover  : #000000;
+    --global-text-color                 : #1f2937;
+    --global-text-color-light           : #6b7280;
+    --global-thead-color                : #f3f4f6;
 
-    /* Refresh tokens — dark */
-    --accent                            : #7fb3ff;
-    --accent-soft                       : #{rgba(#7fb3ff, 0.12)};
-    --accent-on                         : #0b1220;
+    --accent                            : #0891b2;   /* teal on light */
+    --accent-soft                       : #{rgba(#0891b2, 0.1)};
+    --accent-on                         : #ffffff;
+    --accent-2                          : #e11d48;   /* rose */
+    --accent-2-soft                     : #{rgba(#e11d48, 0.08)};
+    --accent-3                          : #b8893c;
+    --accent-3-soft                     : #{rgba(#b8893c, 0.1)};
+    --accent-4                          : #7c3aed;
+    --accent-4-soft                     : #{rgba(#7c3aed, 0.08)};
+    --accent-5                          : #2563eb;
+    --accent-5-soft                     : #{rgba(#2563eb, 0.08)};
 
-    /* Secondary accent palette — dark mode */
-    --accent-2                          : #ea8c6f;
-    --accent-2-soft                     : #{rgba(#ea8c6f, 0.14)};
-    --accent-3                          : #98c693;
-    --accent-3-soft                     : #{rgba(#98c693, 0.14)};
-    --accent-4                          : #e6b666;
-    --accent-4-soft                     : #{rgba(#e6b666, 0.14)};
-    --accent-5                          : #b292d8;
-    --accent-5-soft                     : #{rgba(#b292d8, 0.14)};
-    --surface                           : #1a1d21;
-    --surface-muted                     : #15181c;
-    --surface-raised                    : #22262c;
-    --card-border                       : #2e333a;
-    --chip-bg                           : #{rgba(#7fb3ff, 0.14)};
-    --chip-fg                           : #b9d4ff;
-    --muted-text                        : #9aa4b2;
-    --focus-ring                        : 0 0 0 3px #{rgba(#7fb3ff, 0.45)};
-    --shadow-card                       : 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.35);
-    --shadow-card-hover                 : 0 2px 4px rgba(0, 0, 0, 0.5), 0 10px 24px rgba(0, 0, 0, 0.45);
+    --surface                           : #ffffff;
+    --surface-muted                     : #f4f4f5;
+    --surface-raised                    : #ffffff;
+    --surface-deep                      : #ececec;
+    --card-border                       : #e5e7eb;
+
+    --chip-bg                           : #{rgba(#0891b2, 0.08)};
+    --chip-fg                           : #0891b2;
+    --muted-text                        : #6b7280;
+    --focus-ring                        : 0 0 0 3px #{rgba(#0891b2, 0.35)};
+
+    --shadow-card                       : 0 1px 2px rgba(0,0,0,0.04), 0 12px 28px -18px rgba(0,0,0,0.12);
+    --shadow-card-hover                 : 0 2px 4px rgba(0,0,0,0.06), 0 20px 40px -20px rgba(0,0,0,0.16);
 }

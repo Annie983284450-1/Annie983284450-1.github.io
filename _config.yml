@@ -272,10 +272,11 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+      layout: project
+      author_profile: false
+      body_class: home-page
+      share: false
+      comment: false
   # _talks
   - scope:
       path: ""

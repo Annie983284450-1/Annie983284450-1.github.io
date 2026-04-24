@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEFAULT THEME
+   DEFAULT THEME — DATA / KINETIC (dark navy + neon cyan/rose accents)
    ========================================================================== */
 
 /* Color codes used for the theme */
@@ -26,48 +26,51 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site */
+/* Default theme (kinetic / data-visual — dark navy by default) */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fbf8f2;  /* warm cream — faculty paper feel */
-    --global-border-color               : #{$lighter-gray};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #1f4b7a;
-    --global-link-color-hover           : #{mix(#000, #1f4b7a, 20%)};
-    --global-link-color-visited         : #{mix(#fff, #1f4b7a, 15%)};
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$lighter-gray};
+    --global-base-color                 : #8892b0;
+    --global-bg-color                   : #0a0e1a;   /* deep navy-black */
+    --global-border-color               : #1e2538;
+    --global-code-background-color      : #111726;
+    --global-code-text-color            : #c8d0e0;
+    --global-fig-caption-color          : #8892b0;
+    --global-link-color                 : #64ffda;   /* mint/cyan */
+    --global-link-color-hover           : #9cffec;
+    --global-link-color-visited         : #64ffda;
+    --global-masthead-link-color        : #c8d0e0;
+    --global-masthead-link-color-hover  : #ffffff;
+    --global-text-color                 : #e6e8f0;
+    --global-text-color-light           : #8892b0;
+    --global-thead-color                : #141926;
 
-    /* Refresh tokens — light */
-    --accent                            : #1f4b7a;
-    --accent-soft                       : #{rgba(#1f4b7a, 0.08)};
-    --accent-on                         : #ffffff;
+    /* Core kinetic palette */
+    --accent                            : #64ffda;   /* cyan / mint — primary */
+    --accent-soft                       : #{rgba(#64ffda, 0.12)};
+    --accent-on                         : #0a0e1a;
 
-    /* Secondary accent palette — warm, editorial */
-    --accent-2                          : #c2542f;  /* terracotta — agriculture / projects */
-    --accent-2-soft                     : #{rgba(#c2542f, 0.08)};
-    --accent-3                          : #4f7a4c;  /* sage — education / teaching / news */
-    --accent-3-soft                     : #{rgba(#4f7a4c, 0.08)};
-    --accent-4                          : #b8893c;  /* muted gold — highlights / certs */
-    --accent-4-soft                     : #{rgba(#b8893c, 0.1)};
-    --accent-5                          : #6b4a93;  /* plum — blog tags */
-    --accent-5-soft                     : #{rgba(#6b4a93, 0.08)};
-    --surface                           : #fbf8f2;
-    --surface-muted                     : #f4efe4;
-    --surface-raised                    : #ffffff;
-    --surface-deep                      : #ede4d1;
-    --card-border                       : #e3dccb;
-    --chip-bg                           : #{rgba(#1f4b7a, 0.08)};
-    --chip-fg                           : #1f4b7a;
-    --muted-text                        : #5b6470;
-    --focus-ring                        : 0 0 0 3px #{rgba(#1f4b7a, 0.35)};
+    --accent-2                          : #ff4d7e;   /* hot rose */
+    --accent-2-soft                     : #{rgba(#ff4d7e, 0.14)};
+    --accent-3                          : #ffd166;   /* warm amber */
+    --accent-3-soft                     : #{rgba(#ffd166, 0.12)};
+    --accent-4                          : #a78bfa;   /* electric violet */
+    --accent-4-soft                     : #{rgba(#a78bfa, 0.14)};
+    --accent-5                          : #60a5fa;   /* cool blue */
+    --accent-5-soft                     : #{rgba(#60a5fa, 0.12)};
 
-    /* Refresh tokens — spacing (rem based) */
+    /* Surfaces (layered panels on dark ground) */
+    --surface                           : #0a0e1a;
+    --surface-muted                     : #141926;
+    --surface-raised                    : #141926;
+    --surface-deep                      : #1a2133;
+    --card-border                       : #1e2538;
+
+    /* Chips inherit accent/2 */
+    --chip-bg                           : #{rgba(#64ffda, 0.08)};
+    --chip-fg                           : #64ffda;
+    --muted-text                        : #8892b0;
+    --focus-ring                        : 0 0 0 3px #{rgba(#64ffda, 0.45)};
+
+    /* Spacing (rem-based) */
     --space-1                           : 0.25rem;
     --space-2                           : 0.5rem;
     --space-3                           : 0.75rem;
@@ -77,14 +80,17 @@ $sidebar-screen-min-width   : 1024px;
     --space-7                           : 3rem;
     --space-8                           : 4rem;
 
-    /* Refresh tokens — radii & shadows */
-    --radius-chip                       : 999px;
-    --radius-card                       : 12px;
-    --radius-card-sm                    : 8px;
-    --shadow-card                       : 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 14px rgba(15, 23, 42, 0.06);
-    --shadow-card-hover                 : 0 2px 4px rgba(15, 23, 42, 0.06), 0 10px 24px rgba(15, 23, 42, 0.10);
+    /* Radii & shadows — sharper/tech-y, with a soft glow option */
+    --radius-chip                       : 2px;
+    --radius-card                       : 4px;
+    --radius-card-sm                    : 2px;
+    --shadow-card                       : 0 0 0 1px #{rgba(#64ffda, 0.04)},
+                                          0 20px 40px -24px rgba(0,0,0,0.6);
+    --shadow-card-hover                 : 0 0 0 1px #{rgba(#64ffda, 0.28)},
+                                          0 28px 60px -28px rgba(0,0,0,0.7),
+                                          0 0 40px -10px #{rgba(#64ffda, 0.25)};
 
-    /* Refresh tokens — fluid type scale (clamp: min, preferred, max) */
+    /* Fluid type scale (clamp: min, preferred, max) */
     --text-xs                           : clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
     --text-sm                           : clamp(0.875rem, 0.85rem + 0.15vw, 0.95rem);
     --text-base                         : clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
