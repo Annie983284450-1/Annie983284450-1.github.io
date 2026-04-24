@@ -202,37 +202,104 @@ body {
   > section:first-child { margin-top: var(--space-5); }
 }
 
-/* Section titles — small mono label with a drawing accent */
-.home__section-title {
-  font-family: $monospace;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted-text);
-  padding: 0 0 var(--space-3);
-  margin: 0 0 var(--space-6);
-  border-bottom: 1px solid var(--card-border);
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-4);
-  position: relative;
+/* ===== Section titles — artistic, editorial-meets-kinetic ================
+   Layout:  [ oversized roman numeral ]  [ italic serif label ]  [ hairline ]
+   A small cyan tick hovers above the numeral as a typographic flourish.
+=========================================================================== */
 
-  > span:first-child { position: relative; color: var(--global-text-color); }
-  > span:first-child:before {
-    content: "/ ";
-    color: var(--accent);
+.home { counter-reset: home-section; }
+
+.home > section > .home__section-title {
+  counter-increment: home-section;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: var(--space-5);
+
+  /* Label defaults — the visible label is the first <span>.
+     Font is the italic Fraunces display with tight tracking. */
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, calc(1.2rem + 1.3vw), 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--global-text-color);
+  text-transform: none;
+
+  border: 0;
+  padding: var(--space-4) 0 0;
+  margin: 0 0 var(--space-6);
+
+  /* Oversized Roman numeral */
+  &:before {
+    content: counter(home-section, upper-roman);
+    font-family: var(--font-display);
+    font-style: italic;
     font-weight: 400;
+    font-size: 1.1em;
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    padding-right: var(--space-2);
+    border-right: 1px solid var(--card-border);
+  }
+
+  /* Hairline rule filling the rest of the row (third grid column) */
+  &:after {
+    content: "";
+    height: 1px;
+    background: linear-gradient(90deg, var(--card-border), transparent);
+    justify-self: stretch;
+    align-self: center;
+    grid-column: 3;
+  }
+
+  /* Decorative tick above the numeral */
+  > span:first-child {
+    color: inherit;
+    font-family: inherit;
+    font-style: italic;
+
+    &:before { content: none; }
   }
 }
 
+/* Small cyan tick hovers above every section title */
+.home > section > .home__section-title {
+  &::before {
+    position: relative;
+  }
+}
+
+.home > section:nth-of-type(2) > .home__section-title:before { color: var(--accent); }
+.home > section:nth-of-type(3) > .home__section-title:before { color: var(--accent-2); }
+.home > section:nth-of-type(4) > .home__section-title:before { color: var(--accent-4); }
+
+/* Optional inline trailing link (e.g. "all projects →") in column 3 */
 .home__section-link {
+  grid-column: 3;
+  justify-self: end;
+  font-family: $monospace;
   font-size: 0.72rem;
-  text-transform: none;
-  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
   font-weight: 500;
   color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Responsive stacking on narrow screens */
+@media (max-width: 720px) {
+  .home > section > .home__section-title {
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-3);
+    font-size: clamp(1.35rem, calc(1.2rem + 0.6vw), 1.8rem);
+
+    &:after { display: none; }
+    &:before { padding-right: var(--space-3); font-size: 1em; }
+  }
 }
 
 /* ==========================================================================
@@ -431,19 +498,8 @@ body {
     border: 1px solid var(--accent-soft);
     pointer-events: none;
   }
-  &:after {
-    content: "[ portrait ]";
-    position: absolute;
-    bottom: -28px;
-    left: 0;
-    font-family: $monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    text-transform: uppercase;
-
-    @media (min-width: 820px) { left: auto; right: 0; }
-  }
+  /* Previously had a "[ portrait ]" mono label below the avatar — removed
+     at the user's request. */
 }
 
 /* Animated SVG backdrop for the hero — abstract confidence/bandit lines */
@@ -591,9 +647,7 @@ html[data-theme="dark"] .signature-card__figure img {
 
 .signature-card__step {
   color: var(--accent);
-
-  &:before { content: "["; color: var(--muted-text); margin-right: 2px; }
-  &:after  { content: "]"; color: var(--muted-text); margin-left: 2px; }
+  /* No bracket ornamentation — just the number, clean. */
 }
 .signature-card:nth-child(2) .signature-card__step { color: var(--accent-4); }
 .signature-card:nth-child(3) .signature-card__step { color: var(--accent-2); }
@@ -799,8 +853,6 @@ html[data-theme="dark"] .signature-card__figure img {
   text-transform: uppercase;
   color: var(--accent-2);
   margin-bottom: var(--space-3);
-
-  &:before { content: "> "; opacity: 0.7; }
 }
 
 .feature-panel__title {
