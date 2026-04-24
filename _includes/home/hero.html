@@ -1,0 +1,42 @@
+{% include base_path %}
+{% assign author = site.author %}
+
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero__content">
+    <span class="hero__eyebrow">{{ page.hero.eyebrow | default: "Researcher · Machine Learning" }}</span>
+    <h1 id="hero-name" class="hero__name">{{ author.name }}</h1>
+    <p class="hero__tagline">{{ page.hero.tagline | default: author.bio }}</p>
+    {% if author.employer %}
+      <p class="hero__affiliation">
+        <i class="fa-solid fa-building-columns hero__affiliation-icon" aria-hidden="true"></i>{{ author.employer }}
+      </p>
+    {% endif %}
+    <div class="hero__ctas">
+      {% if author.email %}
+        <a class="cta cta--primary" href="mailto:{{ author.email }}">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>Email
+        </a>
+      {% endif %}
+      <a class="cta cta--secondary" href="{{ base_path }}/cv/">
+        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>CV
+      </a>
+      {% if author.googlescholar %}
+        <a class="cta cta--secondary" href="{{ author.googlescholar }}" rel="noopener">
+          <i class="ai ai-google-scholar" aria-hidden="true"></i>Scholar
+        </a>
+      {% endif %}
+      {% if author.github %}
+        <a class="cta cta--secondary" href="https://github.com/{{ author.github }}" rel="noopener">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>GitHub
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero__avatar">
+    {% if author.avatar contains "://" %}
+      <img src="{{ author.avatar }}" alt="Portrait of {{ author.name }}" loading="eager" decoding="async">
+    {% else %}
+      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="Portrait of {{ author.name }}" loading="eager" decoding="async">
+    {% endif %}
+  </div>
+</section>

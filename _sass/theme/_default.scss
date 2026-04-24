@@ -34,12 +34,51 @@ $sidebar-screen-min-width   : 1024px;
     --global-code-background-color      : #fafafa;
     --global-code-text-color            : #{$darker-gray};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #2f7f93;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
+    --global-link-color                 : #1f4b7a;
+    --global-link-color-hover           : #{mix(#000, #1f4b7a, 20%)};
+    --global-link-color-visited         : #{mix(#fff, #1f4b7a, 15%)};
     --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
+    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);
     --global-text-color                 : #{$dark-gray};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$lighter-gray};
+
+    /* Refresh tokens — light */
+    --accent                            : #1f4b7a;
+    --accent-soft                       : #{rgba(#1f4b7a, 0.08)};
+    --accent-on                         : #ffffff;
+    --surface                           : #ffffff;
+    --surface-muted                     : #f7f8fa;
+    --surface-raised                    : #ffffff;
+    --card-border                       : #e6e8ec;
+    --chip-bg                           : #{rgba(#1f4b7a, 0.08)};
+    --chip-fg                           : #1f4b7a;
+    --muted-text                        : #5b6470;
+    --focus-ring                        : 0 0 0 3px #{rgba(#1f4b7a, 0.35)};
+
+    /* Refresh tokens — spacing (rem based) */
+    --space-1                           : 0.25rem;
+    --space-2                           : 0.5rem;
+    --space-3                           : 0.75rem;
+    --space-4                           : 1rem;
+    --space-5                           : 1.5rem;
+    --space-6                           : 2rem;
+    --space-7                           : 3rem;
+    --space-8                           : 4rem;
+
+    /* Refresh tokens — radii & shadows */
+    --radius-chip                       : 999px;
+    --radius-card                       : 12px;
+    --radius-card-sm                    : 8px;
+    --shadow-card                       : 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 14px rgba(15, 23, 42, 0.06);
+    --shadow-card-hover                 : 0 2px 4px rgba(15, 23, 42, 0.06), 0 10px 24px rgba(15, 23, 42, 0.10);
+
+    /* Refresh tokens — fluid type scale (clamp: min, preferred, max) */
+    --text-xs                           : clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+    --text-sm                           : clamp(0.875rem, 0.85rem + 0.15vw, 0.95rem);
+    --text-base                         : clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
+    --text-lg                           : clamp(1.125rem, 1.07rem + 0.3vw, 1.25rem);
+    --text-xl                           : clamp(1.35rem, 1.25rem + 0.5vw, 1.6rem);
+    --text-2xl                          : clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+    --text-3xl                          : clamp(2rem, 1.6rem + 1.8vw, 3rem);
 }

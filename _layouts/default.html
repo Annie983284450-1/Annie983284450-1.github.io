@@ -11,12 +11,16 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    {{ content }}
+    <main id="main-content" tabindex="-1">
+      {{ content }}
+    </main>
 
     <div class="page__footer">
       <footer>

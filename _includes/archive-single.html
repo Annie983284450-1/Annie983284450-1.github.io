@@ -12,6 +12,69 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if include.type == "card" %}
+
+{% comment %} ============ CARD VARIANT ============ {% endcomment %}
+<article class="card" itemscope itemtype="http://schema.org/CreativeWork">
+  {% if teaser %}
+    <div class="card__media">
+      {% if teaser contains "://" %}
+        <img src="{{ teaser }}" alt="{{ title | strip_html | escape }}" loading="lazy" decoding="async">
+      {% else %}
+        <img src="{{ teaser | prepend: '/images/' | prepend: base_path }}" alt="{{ title | strip_html | escape }}" loading="lazy" decoding="async">
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="card__header">
+    {% if post.venue %}
+      <span class="chip chip--venue" title="{{ post.venue | strip_html | escape }}">{{ post.venue }}</span>
+    {% elsif post.collection == "portfolio" %}
+      <span class="chip chip--venue">Project</span>
+    {% endif %}
+    {% if post.date %}
+      <span class="chip chip--year"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y" }}</time></span>
+    {% endif %}
+  </div>
+
+  <h3 class="card__title" itemprop="headline">
+    {% if post.link %}
+      <a href="{{ post.link }}">{{ title }}</a>
+    {% else %}
+      <a href="{{ base_path }}{{ post.url }}">{{ title }}</a>
+    {% endif %}
+  </h3>
+
+  {% if post.excerpt %}
+    <p class="card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 220 }}</p>
+  {% endif %}
+
+  {% if post.paperurl or post.slidesurl or post.citation or post.link %}
+    <div class="card__actions">
+      {% if post.paperurl %}
+        <a class="card__action" href="{{ post.paperurl }}" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>PDF</a>
+      {% endif %}
+      {% if post.slidesurl %}
+        <a class="card__action" href="{{ post.slidesurl }}" rel="noopener"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a>
+      {% endif %}
+      {% if post.link and post.collection == "portfolio" %}
+        <a class="card__action" href="{{ post.link }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+      {% endif %}
+      <a class="card__action" href="{{ base_path }}{{ post.url }}"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>Details</a>
+    </div>
+  {% endif %}
+
+  {% if post.citation %}
+    <details class="cite-details">
+      <summary>Cite</summary>
+      <p class="cite-details__text">{{ post.citation }}</p>
+    </details>
+  {% endif %}
+</article>
+
+{% else %}
+
+{% comment %} ============ LEGACY LIST / GRID VARIANTS ============ {% endcomment %}
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -22,7 +85,7 @@
           {% else %}
             "{{ teaser | prepend: "/images/" | prepend: base_path }}"
           {% endif %}
-          alt="">
+          alt="{{ title | strip_html | escape }} teaser">
       </div>
     {% endif %}
 
@@ -33,13 +96,12 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    
+
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
         {% if post.collection == 'teaching' %}
-          <!-- <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p> -->
           <p>
             {{ post.type }},
             <i>{{ post.venue }}</i>
@@ -58,7 +120,7 @@
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
-    
+
     {% if post.citation and post.paperurl and post.slidesurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation and post.paperurl %}
@@ -75,3 +137,5 @@
 
   </article>
 </div>
+
+{% endif %}

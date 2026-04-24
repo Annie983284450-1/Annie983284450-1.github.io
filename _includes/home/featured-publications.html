@@ -1,0 +1,21 @@
+{% include base_path %}
+
+{% assign featured = site.publications | where: "featured", true %}
+{% if featured.size == 0 %}
+  {% assign featured = site.publications | sort: "date" | reverse %}
+{% endif %}
+{% assign featured = featured | slice: 0, 3 %}
+
+{% if featured.size > 0 %}
+<section class="home__featured-publications" aria-labelledby="home-pubs-title">
+  <h2 class="home__section-title">
+    <span id="home-pubs-title">Selected Publications</span>
+    <a class="home__section-link" href="{{ base_path }}/publications/">All publications →</a>
+  </h2>
+  <div class="cards">
+    {% for post in featured %}
+      {% include archive-single.html type="card" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

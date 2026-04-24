@@ -36,17 +36,32 @@ $sidebar-screen-min-width   : 1024px;
 /* Dark theme for the site */
 html[data-theme="dark"] {
     --global-base-color                 : #{$background};
-    --global-bg-color                   : #{$background};
-    --global-border-color               : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$dark-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$background-lighter};
+    --global-bg-color                   : #1a1d21;
+    --global-border-color               : #2e333a;
+    --global-code-background-color      : #0f1115;
+    --global-code-text-color            : #e2e8f0;
+    --global-fig-caption-color          : #9aa4b2;
+    --global-link-color                 : #7fb3ff;
+    --global-link-color-hover           : #a9cbff;
+    --global-link-color-visited         : #b3c8e4;
+    --global-masthead-link-color        : #e2e8f0;
+    --global-masthead-link-color-hover  : #ffffff;
+    --global-text-color                 : #e6ebf2;
+    --global-text-color-light           : #9aa4b2;
+    --global-thead-color                : #262b31;
+
+    /* Refresh tokens — dark */
+    --accent                            : #7fb3ff;
+    --accent-soft                       : #{rgba(#7fb3ff, 0.12)};
+    --accent-on                         : #0b1220;
+    --surface                           : #1a1d21;
+    --surface-muted                     : #15181c;
+    --surface-raised                    : #22262c;
+    --card-border                       : #2e333a;
+    --chip-bg                           : #{rgba(#7fb3ff, 0.14)};
+    --chip-fg                           : #b9d4ff;
+    --muted-text                        : #9aa4b2;
+    --focus-ring                        : 0 0 0 3px #{rgba(#7fb3ff, 0.45)};
+    --shadow-card                       : 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover                 : 0 2px 4px rgba(0, 0, 0, 0.5), 0 10px 24px rgba(0, 0, 0, 0.45);
 }

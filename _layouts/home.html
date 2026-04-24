@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" role="main" class="home">
+  {% include home/hero.html %}
+  {% include home/news.html %}
+  {% include home/featured-publications.html %}
+  {% include home/featured-projects.html %}
+  {% include home/about-long.html %}
+
+  {% if content and content != "" %}
+    <section class="home__extra">{{ content }}</section>
+  {% endif %}
+</div>

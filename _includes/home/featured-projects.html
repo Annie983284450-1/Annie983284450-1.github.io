@@ -1,0 +1,21 @@
+{% include base_path %}
+
+{% assign featured = site.portfolio | where: "featured", true %}
+{% if featured.size == 0 %}
+  {% assign featured = site.portfolio | sort: "date" | reverse %}
+{% endif %}
+{% assign featured = featured | slice: 0, 3 %}
+
+{% if featured.size > 0 %}
+<section class="home__featured-projects" aria-labelledby="home-projects-title">
+  <h2 class="home__section-title">
+    <span id="home-projects-title">Selected Projects</span>
+    <a class="home__section-link" href="{{ base_path }}/portfolio/">All projects →</a>
+  </h2>
+  <div class="cards">
+    {% for post in featured %}
+      {% include archive-single.html type="card" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

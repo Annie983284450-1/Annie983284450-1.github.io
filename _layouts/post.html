@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+    <h1 class="post__title" itemprop="headline">{{ page.title }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.read_time != false %}
+        <span>·</span>
+        <span>{% include read-time.html %}</span>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post__content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% if page.tags.size > 0 %}
+    <div class="post-card__tags" style="margin-top: var(--space-6);">
+      {% for tag in page.tags %}
+        <span class="chip chip--tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <footer class="post__footer">
+    <span>Have thoughts? <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/issues/new?title=Re:%20{{ page.title | url_encode }}" rel="noopener">Discuss on GitHub</a>.</span>
+    <a href="{{ base_path }}/blog/">← All posts</a>
+  </footer>
+
+  {% if page.previous or page.next %}
+    <nav class="post__nav" aria-label="Post navigation">
+      {% if page.previous %}
+        <a href="{{ base_path }}{{ page.previous.url }}" rel="prev">
+          <span class="post__nav-label">Previous</span>
+          <span>{{ page.previous.title }}</span>
+        </a>
+      {% endif %}
+      {% if page.next %}
+        <a class="post__nav-next" href="{{ base_path }}{{ page.next.url }}" rel="next">
+          <span class="post__nav-label">Next</span>
+          <span>{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</article>
