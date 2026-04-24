@@ -11,61 +11,44 @@ redirect_from:
 
 Education
 ======
-* Ph. D. in Electrical and Computer Engineering, Georgia Institute of Technology, 2025 Jan
-* B.S. in Electrical and Computer Engineering, Huazhong University of Science and Technology. 2018 Jun
+* **Ph.D., Electrical and Computer Engineering**, Georgia Institute of Technology — 2018 – May 2025
+* **B.S., Electrical and Computer Engineering**, Huazhong University of Science and Technology — 2014 – Jun 2018
 
-<!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012 -->
-
-<!-- Work experience
+Research Interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Uncertainty quantification & conformal prediction
+* Reinforcement learning and contextual bandits for clinical decision support
+* Trustworthy ML for healthcare (sepsis prediction, ICU time-series)
+* Multi-task computer vision (plant-growth prediction, medical imaging)
+* Large language models, generative AI, statistical modeling
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git -->
-  
 Skills
 ======
-* Tools and Languages
-  * PyTorch, Tensorflow
-  * SQL, PostgreSQL, C/C++, R, JAX, Matlab
-  * Python
-* Research Interests
-  * Satistical Modeling, Uncertainty Quantification, Large Language Models, Personalized Recommendation System, Generative AI
+* **Programming languages:** Python, C/C++, R, SQL, PostgreSQL, Matlab, Git
+* **ML / data science:** PyTorch, TensorFlow, JAX, scikit-learn, Pandas, NumPy, Hugging Face
+* **Specialized areas:** Conformal prediction, deep reinforcement learning, contextual bandits, large language models (LoRA / fine-tuning), generative AI, computer vision, statistical modeling, recommendation systems
+
+Teaching
+======
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+**Teaching interests.** Machine learning · artificial intelligence · data science · reinforcement learning · cybersecurity &amp; AI security · mathematical foundations of machine learning.
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+Certifications
 ======
   <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
+    {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
 
-
-  
- 
-   
-Teaching
+Professional Activities & Service
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Professional Activities & Services
-======
-* Peer Reviewer of IEEE Global Communications Conference, and Expert Systems With Applications
+* Peer reviewer — *IEEE Global Communications Conference* (GlobeCom)
+* Peer reviewer — *Expert Systems With Applications*

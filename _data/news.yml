@@ -1,10 +1,10 @@
 # News items shown on the home page. Sorted newest first automatically.
-# Date format: YYYY-MM-DD. Text supports Markdown (inline only).
+# Date format: YYYY-MM-DD. Text supports Markdown (inline).
+- date: 2025-08-30
+  text: "Wrapped up a summer of research on **multi-task computer vision for plant growth** at North Carolina State (with Dr. Yuchen Liu) — ConvLSTM + encoder–decoder with domain-specific losses on the KOMATSUNA dataset."
+- date: 2025-05-15
+  text: "Defended my Ph.D. dissertation 🎓 — *Trustworthy and Robust Early Sepsis Prediction for ICU Patients using Reinforcement Learning and Conformal Prediction.*"
 - date: 2025-03-29
-  text: "New preprint: **[NeuroSep-CP-LCB](/publication/2025-03-29-neuralcbcp)** — neural contextual bandits + conformal prediction for early sepsis detection."
+  text: "New preprint: **[NeuroSep-CP-LCB](https://arxiv.org/abs/2503.16708)** — neural contextual bandits + conformal prediction for personalized early sepsis detection. [[code]](https://github.com/Annie983284450-1/NeuralLCB_C)"
 - date: 2025-03-18
-  text: "Paper **[Sepsyn-OLCP](/publication/2025-03-18-Sepsyn-OLCP)** released — online learning framework for sepsis prediction with conformal uncertainty."
-- date: 2025-03-01
-  text: "Completed [LinkedIn Learning certification](/talks/): *Fine-Tuning for LLMs: from Beginner to Advanced*."
-- date: 2025-01-15
-  text: "Defended my Ph.D. dissertation in Electrical & Computer Engineering at Georgia Tech 🎓"
+  text: "Preprint: **[Sepsyn-OLCP](https://arxiv.org/abs/2503.14663)** — online learning framework for sepsis prediction with conformal uncertainty. [[code]](https://github.com/Annie983284450-1/CPGapBandit)"

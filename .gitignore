@@ -17,3 +17,8 @@ package-lock.json
 .jekyll-cache/
 .jekyll-metadata
 .DS_Store
+
+# Private / never-push documents
+Anni_Zhou_CV_NNU.pdf
+*_CV*.pdf
+private/
