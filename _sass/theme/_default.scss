@@ -29,7 +29,7 @@ $sidebar-screen-min-width   : 1024px;
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
+    --global-bg-color                   : #fbf8f2;  /* warm cream — faculty paper feel */
     --global-border-color               : #{$lighter-gray};
     --global-code-background-color      : #fafafa;
     --global-code-text-color            : #{$darker-gray};
@@ -57,10 +57,11 @@ $sidebar-screen-min-width   : 1024px;
     --accent-4-soft                     : #{rgba(#b8893c, 0.1)};
     --accent-5                          : #6b4a93;  /* plum — blog tags */
     --accent-5-soft                     : #{rgba(#6b4a93, 0.08)};
-    --surface                           : #ffffff;
-    --surface-muted                     : #f7f8fa;
+    --surface                           : #fbf8f2;
+    --surface-muted                     : #f4efe4;
     --surface-raised                    : #ffffff;
-    --card-border                       : #e6e8ec;
+    --surface-deep                      : #ede4d1;
+    --card-border                       : #e3dccb;
     --chip-bg                           : #{rgba(#1f4b7a, 0.08)};
     --chip-fg                           : #1f4b7a;
     --muted-text                        : #5b6470;

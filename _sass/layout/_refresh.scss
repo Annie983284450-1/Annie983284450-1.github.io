@@ -2075,3 +2075,192 @@ a.chip--tag:hover { filter: brightness(0.92); transform: translateY(-1px); }
 .hero__avatar img {
   filter: grayscale(0.1) contrast(1.02) saturate(1.05);
 }
+
+/* ==========================================================================
+   FACULTY / PAPER FEEL — warm background, subtle decorations
+   ========================================================================== */
+
+/* Thin colored rule at the very top of every page (editorial touch).
+   Three stripes in the secondary palette, keeps the site feeling composed. */
+body:before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg,
+              var(--accent) 0%, var(--accent) 33%,
+              var(--accent-4) 33%, var(--accent-4) 66%,
+              var(--accent-3) 66%, var(--accent-3) 100%);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+/* Shift the masthead down a touch so the colored rule has room */
+.masthead { padding-top: 3px; }
+
+/* Masthead background: transparent over the warm body so there's a subtle wash */
+.masthead,
+.masthead__inner-wrap {
+  background: transparent;
+}
+
+/* Hero: soft radial gradient wash behind the content, plus a subtle
+   geometric corner decoration */
+.hero {
+  position: relative;
+  background: radial-gradient(ellipse at top right,
+              #{rgba(#c2542f, 0.06)} 0%,
+              transparent 50%),
+              radial-gradient(ellipse at bottom left,
+              #{rgba(#1f4b7a, 0.05)} 0%,
+              transparent 55%);
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* Geometric decoration in the top-left corner of the hero.
+   A grid of dots — quiet editorial mark. */
+.hero:after {
+  content: "";
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-2);
+  width: 56px;
+  height: 56px;
+  background-image: radial-gradient(var(--accent) 1px, transparent 1.3px);
+  background-size: 10px 10px;
+  opacity: 0.35;
+  pointer-events: none;
+
+  @media (max-width: 719px) { display: none; }
+}
+
+/* Section rhythm — alternate white surface cards against the warm body,
+   so sections feel like articles in a journal rather than one long page. */
+.home__news,
+.home__research,
+.home__about {
+  padding: var(--space-6);
+  background: var(--surface-raised);
+  border: 1px solid var(--card-border);
+  border-radius: 2px;
+}
+
+/* Dark mode keeps the previous dark surface */
+html[data-theme="dark"] .home__news,
+html[data-theme="dark"] .home__research,
+html[data-theme="dark"] .home__about {
+  background: var(--surface-raised);
+  border-color: var(--card-border);
+}
+
+@media (max-width: 720px) {
+  .home__news, .home__research, .home__about {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+/* Signature section gets a deeper warm tone for contrast */
+.home__signature {
+  background: var(--surface-deep);
+  html[data-theme="dark"] & { background: var(--surface-muted); }
+}
+
+/* Subtle leaf-green tint behind the About's drop cap paragraph — using
+   a sage pseudo-element rather than full bg wash so text contrast stays high. */
+.home__about { position: relative; }
+.home__about:before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 180px;
+  height: 6px;
+  background: var(--accent-3);
+  opacity: 0.9;
+}
+
+.home__news { position: relative; }
+.home__news:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 180px;
+  height: 6px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+.home__research { position: relative; }
+.home__research:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 180px;
+  height: 6px;
+  background: var(--accent-5);
+  opacity: 0.9;
+}
+
+/* Cards and chips need a raised surface on top of warm body */
+.card,
+.signature-card,
+.cert-item,
+.post-card {
+  background: var(--surface-raised);
+}
+
+/* Chips read better with crisp borders against warm bg */
+.chip--tag {
+  border: 1px solid transparent;
+}
+
+/* Footer: warm tone with an accent top rule */
+.page__footer {
+  background: var(--surface-muted) !important;
+  border-top: 1px solid var(--card-border) !important;
+  position: relative;
+}
+.page__footer:before {
+  content: "";
+  position: absolute;
+  top: -2px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+              var(--accent), var(--accent-4), var(--accent-3), var(--accent-5), var(--accent-2));
+  opacity: 0.8;
+}
+
+/* Masthead hover treatment — slight underline for nav links */
+.greedy-nav a {
+  position: relative;
+  transition: color 0.2s;
+}
+.greedy-nav a:not(.site-title):after {
+  content: "";
+  position: absolute;
+  left: var(--space-4); right: var(--space-4);
+  bottom: 8px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.greedy-nav a:not(.site-title):hover:after { transform: scaleX(1); }
+
+/* Masthead site-title (Annie's name) — use the display font */
+.masthead__menu-item--lg.persist a {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+/* Hero tagline gets a soft left-rule as an editorial byline marker */
+.hero__tagline {
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--accent-2);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 719px) {
+  .hero__tagline { padding-left: var(--space-3); }
+}

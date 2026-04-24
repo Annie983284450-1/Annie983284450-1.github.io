@@ -1,14 +1,11 @@
-# Site header navigation. Keep short — CV and Blog cover everything else.
+# Site header navigation. Kept minimal — CV and Blog cover everything else.
+# Certifications (/talks/) and Teaching (/teaching/) pages remain accessible
+# at their URLs but are not linked from the main header; the CV page already
+# lists both sections.
 
 main:
   - title: "CV"
     url: /cv/
-
-  - title: "Certifications"
-    url: /talks/
-
-  - title: "Teaching"
-    url: /teaching/
 
   - title: "Blog"
     url: /blog/
