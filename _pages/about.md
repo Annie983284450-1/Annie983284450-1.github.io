@@ -5,8 +5,8 @@ title: "Anni Zhou"
 author_profile: false
 body_class: home-page
 hero:
-  eyebrow: "Researcher · Machine Learning"
-  tagline: "Ph.D. in ECE at Georgia Tech. Building robust, uncertainty-aware ML for healthcare — reinforcement learning, conformal prediction, and statistical modeling."
+  eyebrow: "Applied Machine Learning Research"
+  tagline: "Ph.D. in ECE at Georgia Tech. I build uncertainty-aware machine learning — conformal prediction, reinforcement learning, multi-task vision — and deploy it wherever the question \"how confident are we?\" actually matters."
 redirect_from:
   - /about/
   - /about.html

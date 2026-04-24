@@ -19,11 +19,12 @@ body_class: home-page
     <ol class="certs__list">
       {% assign certs = site.talks | sort: 'date' | reverse %}
       {% for cert in certs %}
+        {% comment %} cert.content is rendered HTML, so pull the first <a href="..."> link. {% endcomment %}
         {% assign cert_link = null %}
-        {% if cert.content contains '](' %}
-          {% assign url_bits = cert.content | split: '](' %}
+        {% if cert.content contains 'href="http' %}
+          {% assign url_bits = cert.content | split: 'href="' %}
           {% if url_bits.size > 1 %}
-            {% assign cert_link = url_bits[1] | split: ')' | first | strip %}
+            {% assign cert_link = url_bits[1] | split: '"' | first | strip %}
           {% endif %}
         {% endif %}
         <li class="cert-item" style="--stagger: {{ forloop.index0 }}">
@@ -32,7 +33,8 @@ body_class: home-page
             {% if cert.venue %}<span class="cert-item__venue">{{ cert.venue }}</span>{% endif %}
           </div>
           <h2 class="cert-item__title">{{ cert.title }}</h2>
-          {% assign excerpt = cert.content | markdownify | strip_html | strip | truncate: 240 %}
+          {% comment %} Take content before the first <a …> link so the excerpt doesn't end with the link text. {% endcomment %}
+          {% assign excerpt = cert.content | split: '<a ' | first | strip_html | strip | truncate: 240 %}
           {% if excerpt != "" %}
             <p class="cert-item__excerpt">{{ excerpt }}</p>
           {% endif %}

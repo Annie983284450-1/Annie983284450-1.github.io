@@ -2,16 +2,16 @@
 
 <section class="home__signature reveal" aria-labelledby="home-signature-title">
   <h2 class="home__section-title">
-    <span id="home-signature-title">Signature Research — Uncertainty-Aware ML for the ICU</span>
+    <span id="home-signature-title">Thesis Arc — Calibrated Uncertainty, in Three Papers</span>
   </h2>
 
-  <p class="signature__lede">Three papers, one pipeline. Each builds on the last — from the peer-reviewed foundation through two 2025 preprints — and each ships with open-source code.</p>
+  <p class="signature__lede">Three papers on a single idea: sequential decision-making that is <em>honest about its confidence</em>. The setting in my Ph.D. was early sepsis prediction; the methods are portable. Each paper ships with open-source code.</p>
 
   <div class="signature__grid">
 
     <article class="signature-card reveal" style="--stagger: 0">
       <div class="signature-card__figure">
-        <img src="{{ base_path }}/images/research/onai-comp-fig.png" alt="OnAI-Comp system infrastructure diagram: Online Selection Module (Third Trusted Party) connected to an Offline AI Experts Module, feeding predictions for new patients using utility scores from old patients." loading="lazy">
+        <img src="{{ base_path }}/images/research/onai-comp-fig.png" alt="OnAI-Comp system infrastructure: an online selection module acting as a trusted third party routes predictions for new and old patients through an offline pool of AI experts via utility scores." loading="lazy">
       </div>
       <div class="signature-card__body">
         <div class="signature-card__meta">
@@ -19,8 +19,8 @@
           <span class="signature-card__year">2021 · IEEE/ACM TCBB</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a></h3>
-        <p class="signature-card__kicker">Online experts compete — and a trusted selector picks the winner per patient.</p>
-        <p class="signature-card__body-text">Heterogeneous ML experts (XGBoost, RF, LR, …) are evaluated online by average regret; the selector converges to the best expert in hindsight, and LIME attributions keep the choice auditable for clinicians.</p>
+        <p class="signature-card__kicker">A pool of models competes. A trusted selector picks the right one per case.</p>
+        <p class="signature-card__body-text">Many models are better than one — but only if you can tell which one is right for <em>this</em> patient. OnAI-Comp does the telling, and every choice comes with an interpretable explanation.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://pubmed.ncbi.nlm.nih.gov/34699366/" rel="noopener">Paper</a>
           <a class="card__action" href="https://github.com/Annie983284450-1/OnAI-Comp" rel="noopener">Code</a>
@@ -31,7 +31,7 @@
 
     <article class="signature-card reveal" style="--stagger: 1">
       <div class="signature-card__figure">
-        <img src="{{ base_path }}/images/research/sepsyn-olcp-fig.png" alt="Sepsyn-OLCP architecture: training patients feed a pool of AI clinicians and a prediction-interval calculator via conformal prediction; an online selector (trusted third party) routes testing patients to the most reliable expert." loading="lazy">
+        <img src="{{ base_path }}/images/research/sepsyn-olcp-fig.png" alt="Sepsyn-OLCP system overview: training patients feed AI clinicians with split conformal intervals; an online selector routes testing patients with calibrated confidence bounds." loading="lazy">
       </div>
       <div class="signature-card__body">
         <div class="signature-card__meta">
@@ -39,8 +39,8 @@
           <span class="signature-card__year">2025 · arXiv</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a></h3>
-        <p class="signature-card__kicker">Wrap the pool in split conformal prediction. Select experts by <em>gap</em>, not accuracy.</p>
-        <p class="signature-card__body-text">Every prediction gets a distribution-free confidence interval with guaranteed marginal coverage; gap-based selection degrades gracefully when a single expert is confidently wrong.</p>
+        <p class="signature-card__kicker">Every prediction ships with a calibrated confidence interval.</p>
+        <p class="signature-card__body-text">Point predictions don't cut it when the cost of being wrong is someone's life. Sepsyn-OLCP wraps the pipeline in split conformal prediction, so the system knows — and says — when it shouldn't be trusted.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.14663" rel="noopener">Paper</a>
           <a class="card__action" href="https://github.com/Annie983284450-1/CPGapBandit" rel="noopener">Code</a>
@@ -51,7 +51,7 @@
 
     <article class="signature-card reveal" style="--stagger: 2">
       <div class="signature-card__figure">
-        <img src="{{ base_path }}/images/research/neurosep-fig.png" alt="NeuroSep-CP-LCB system overview: a neural network reward approximator feeds a prediction-interval calculator, with training and testing patient data flowing through a conformal confidence bound." loading="lazy">
+        <img src="{{ base_path }}/images/research/neurosep-fig.png" alt="NeuroSep-CP-LCB system overview: a neural network reward approximator paired with a prediction-interval calculator, learning from training patient data and predicting on testing patient data." loading="lazy">
       </div>
       <div class="signature-card__body">
         <div class="signature-card__meta">
@@ -59,8 +59,8 @@
           <span class="signature-card__year">2025 · arXiv</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a></h3>
-        <p class="signature-card__kicker">Drop the expert pool. Model the reward directly with a neural net — safely — using a conformal LCB bonus.</p>
-        <p class="signature-card__body-text">An LCB exploration bonus penalises extrapolation into regions the logged policy never visited; conformal prediction calibrates the bonus width rigorously instead of tuning it heuristically.</p>
+        <p class="signature-card__kicker">Learn a patient-specific reward model, safely, from offline data alone.</p>
+        <p class="signature-card__body-text">A neural network replaces the model pool — expressive enough to be personal — with a conformal lower-confidence-bound bonus that prevents the policy from wandering into territory the data never visited.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.16708" rel="noopener">Paper</a>
           <a class="card__action" href="https://github.com/Annie983284450-1/NeuralLCB_C" rel="noopener">Code</a>

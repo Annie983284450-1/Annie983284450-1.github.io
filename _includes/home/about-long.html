@@ -1,15 +1,17 @@
 <section class="home__about reveal" aria-labelledby="home-about-title">
   <h2 class="home__section-title"><span id="home-about-title">About</span></h2>
   <div class="home__about-body">
-    <p class="home__about-lead">I'm <strong>Anni&nbsp;Zhou</strong> — I earned my Ph.D. in Electrical and Computer Engineering from Georgia Tech in May&nbsp;2025, advised by <em>Dr.&nbsp;Raheem&nbsp;Beyah</em> and <em>Dr.&nbsp;Rishikesan&nbsp;Kamaleswaran</em>. My research builds <strong>trustworthy, uncertainty-aware machine learning</strong> for clinical decision-making — with an emphasis on early sepsis prediction in the ICU, where a prediction without a calibrated confidence interval isn't safe to act on.</p>
+    <p class="home__about-lead">I'm <strong>Anni&nbsp;Zhou</strong>. My research has a single animating question: <em>how do we build machine-learning systems that are honest about what they don't know?</em> I bring tools from <strong>uncertainty quantification, conformal prediction, contextual bandits and reinforcement learning</strong> to problems where confidence matters — and I'm deliberately domain-curious about where those methods land next.</p>
 
-    <p>My dissertation threads three contributions into one pipeline: <a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a> (a peer-reviewed online framework where heterogeneous ML experts compete for the right to predict the next patient), <a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a> (the same pipeline wrapped in split conformal prediction and a <em>gap-based</em> online selector), and <a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a> (a neural contextual bandit with an LCB bonus calibrated by conformal prediction, for safe offline policy learning).</p>
+    <p>My Ph.D. at Georgia Tech (advised by <em>Dr.&nbsp;Raheem&nbsp;Beyah</em> and <em>Dr.&nbsp;Rishikesan&nbsp;Kamaleswaran</em>) traced a single arc in clinical decision support — from online expert ensembles (<a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a>) through gap-based bandits with calibrated intervals (<a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a>) to neural contextual bandits with conformal LCB bonuses (<a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a>). The common thread isn't sepsis; it's <em>trustworthy sequential decision-making</em>.</p>
 
     <blockquote class="pull-quote">
-      <p>A prediction without a calibrated confidence interval is not safe to act on.</p>
+      <p>The methods I work on — calibrated uncertainty, safe exploration, interpretable selection — travel. They were developed in the ICU. They're not stuck there.</p>
     </blockquote>
 
-    <p>Through summer 2025 I worked with <em>Dr.&nbsp;Yuchen&nbsp;Liu</em> at NC State on <strong>multi-task computer vision for agriculture</strong>: a ConvLSTM encoder–decoder that jointly forecasts plant growth at the pixel level and classifies environmental conditions (drought vs. control). The project introduced a novel <em>Pixel-of-Interest (POI) bi-polar regression</em> metric for physically meaningful evaluation, outperforming ConvLSTM, PredRNN, PhyDNet and SimVP on the KOMATSUNA dataset.</p>
+    <p>Over summer 2025 I moved the toolkit to computer vision in agriculture with <em>Dr.&nbsp;Yuchen&nbsp;Liu</em> at NC State — the <a href="#plant">CAMP framework</a> jointly forecasts plant growth frames and classifies environmental conditions, with a new POI-based bipolar-regression metric for physically meaningful evaluation. Different inputs, same instinct: design models that know when they shouldn't be trusted.</p>
+
+    <p>I'm open to the next domain: biomechanics, energy systems, earth observation, whatever has a real decision and a real cost when the model is wrong.</p>
 
     <h3>Education</h3>
     <ul>

@@ -1,18 +1,18 @@
 {% include base_path %}
 
-<section class="home__feature home__feature--plant reveal" aria-labelledby="home-plant-title">
+<section id="plant" class="home__feature home__feature--plant reveal" aria-labelledby="home-plant-title">
   <div class="feature-panel">
     <div class="feature-panel__text">
-      <span class="feature-panel__eyebrow">Summer 2025 · NC State</span>
-      <h2 id="home-plant-title" class="feature-panel__title">Multi-task Computer Vision<br><em>for Plant Growth</em></h2>
-      <p class="feature-panel__body">The <strong>CAMP framework</strong> — <em>Classification-assisted Multi-task Prediction</em> — uses a PredRNN-based spatiotemporal memory to encode sequences of plant images, then splits into two heads: a frame-prediction branch that reconstructs future growth, and a label-prediction branch that classifies environmental conditions (drought vs. control). Kernel sharing between the two heads lets visual and categorical signals inform each other.</p>
-      <p class="feature-panel__body">I also introduced <strong>POI-based bi-polar regression</strong> — a physically meaningful evaluation metric that counts leaf growth vs. shrinkage at the pixel level — complementing SSIM/MSE. Benchmarked against ConvLSTM, PredRNN, PhyDNet and SimVP on the KOMATSUNA dataset.</p>
+      <span class="feature-panel__eyebrow">Methodology, Portable · NC State · Summer 2025</span>
+      <h2 id="home-plant-title" class="feature-panel__title">Computer Vision<br><em>for Plant Growth</em></h2>
+      <p class="feature-panel__body">Same instinct, different inputs: the <strong>CAMP framework</strong> — <em>Classification-assisted Multi-task Prediction</em> — uses PredRNN spatiotemporal memory to encode sequences of plant images, then splits into two heads — a frame-prediction branch that reconstructs future growth and a label-prediction branch that classifies environmental conditions (drought vs. control). Kernel sharing lets the two signals inform each other.</p>
+      <p class="feature-panel__body">I also introduced <strong>POI-based bi-polar regression</strong>, a physically meaningful evaluation metric that counts leaf growth vs. shrinkage at the pixel level — complementing SSIM/MSE where those metrics miss the biology. Benchmarked against ConvLSTM, PredRNN, PhyDNet and SimVP on the KOMATSUNA and Arabidopsis datasets.</p>
       <p class="feature-panel__meta">Collaborator · <em>Dr. Yuchen Liu</em>, North Carolina State University</p>
     </div>
     <div class="feature-panel__image">
       <figure>
-        <img src="{{ base_path }}/images/research/camp-system-overview.png" alt="CAMP framework system overview: input plant image frames feed a Spatiotemporal Memory built from stacked PredRNN cells; a Memory Flow block separates Temporal and Depth memory streams; kernel-shared Feature Extraction branches into a Frame Prediction (upsampling) head producing future output frames and a Label Prediction (fully connected) head classifying drought vs control; evaluated against ground truth using MAE, MSE, SSIM." loading="lazy">
-        <figcaption>CAMP framework — system overview with the dual-head architecture (frame prediction + environmental classification).</figcaption>
+        <img src="{{ base_path }}/images/research/camp-system-overview.png" alt="CAMP framework system overview: plant image frames feed a stack of PredRNN cells forming a spatiotemporal memory; a memory-flow block separates temporal and depth streams; feature extraction with kernel sharing branches into a frame prediction head producing future output frames and a label prediction head classifying drought vs. control; evaluated against ground truth with MAE, MSE, SSIM." loading="lazy">
+        <figcaption>CAMP framework — dual-head architecture: frame prediction (what the plant will look like) + environmental classification (why).</figcaption>
       </figure>
     </div>
   </div>

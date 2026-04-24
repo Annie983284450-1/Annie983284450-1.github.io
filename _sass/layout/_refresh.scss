@@ -2264,3 +2264,241 @@ html[data-theme="dark"] .home__about {
 @media (max-width: 719px) {
   .hero__tagline { padding-left: var(--space-3); }
 }
+
+/* ==========================================================================
+   ARTISTIC LAYER — ornaments, paper texture, hero decoration
+   ========================================================================== */
+
+/* Subtle paper-noise texture overlaid on the body. Tiny SVG, inlined.
+   The noise is very low opacity so type stays crisp. */
+body {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-repeat: repeat;
+}
+html[data-theme="dark"] body {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.025 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Ornament separator — a typographic asterism between the hero and content.
+   Three dots in a triangular arrangement, an old editorial convention. */
+.hero:before {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  width: 80px;
+  height: 32px;
+  transform: translateX(-50%);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 32'><circle cx='40' cy='8' r='2' fill='%23c2542f'/><circle cx='28' cy='22' r='2' fill='%231f4b7a'/><circle cx='52' cy='22' r='2' fill='%234f7a4c'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* Ornament divider — appears after major home sections.
+   Applied to .ornament-divider helper class, and auto-inserted after
+   signature + plant feature sections. */
+.home__signature:after,
+.home__feature--plant:after {
+  content: "";
+  display: block;
+  height: 32px;
+  margin: var(--space-7) auto 0;
+  width: 140px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 32'><g fill='none' stroke='%23c2542f' stroke-width='1.2'><line x1='0' y1='16' x2='50' y2='16' opacity='0.5'/><line x1='90' y1='16' x2='140' y2='16' opacity='0.5'/></g><text x='70' y='22' text-anchor='middle' font-family='Georgia, serif' font-style='italic' font-size='20' fill='%23c2542f'>%E2%9C%A6</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Decorative arc behind the hero portrait — a quiet orbit mark,
+   evoking "confidence interval" semantics without being literal. */
+.hero__avatar {
+  position: relative;
+}
+
+.hero__avatar:before {
+  content: "";
+  position: absolute;
+  top: -20px; left: -20px; right: -20px; bottom: -20px;
+  border: 1px solid var(--accent-2);
+  border-radius: 50%;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+  animation: orbit-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.hero__avatar:after {
+  content: "";
+  position: absolute;
+  top: -34px; left: -34px; right: -34px; bottom: -34px;
+  border: 1px dashed var(--accent);
+  border-radius: 50%;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+  animation: orbit-in 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+.hero__avatar img { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes orbit-in {
+    from { opacity: 0; transform: scale(0.85) rotate(-8deg); }
+    to   { opacity: var(--orbit-opacity, 0.28); transform: scale(1) rotate(0); }
+  }
+  .hero__avatar:after { --orbit-opacity: 0.22; }
+}
+
+/* Hand-drawn-feel section titles — a squiggle underline on the big
+   titles like "About", "Thesis Arc", etc. Keeps it editorial, not stiff. */
+.home__section-title > span:first-child {
+  position: relative;
+  display: inline-block;
+}
+
+.home__section-title > span:first-child:after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -10px;
+  height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'><path d='M0,4 Q10,0 20,4 T40,4 T60,4 T80,4 T100,4' fill='none' stroke='%23c2542f' stroke-width='1.2' opacity='0.55'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+/* Pull quote gets a proper opening-quote ornament */
+.pull-quote {
+  position: relative;
+}
+.pull-quote:before {
+  content: "";
+}
+.pull-quote p:before {
+  content: "“";
+  font-family: var(--font-display);
+  font-size: 3em;
+  line-height: 0.5;
+  color: var(--accent-2);
+  vertical-align: -0.25em;
+  margin-right: 0.1em;
+  opacity: 0.6;
+  font-style: italic;
+}
+.pull-quote p:after {
+  content: "”";
+  font-family: var(--font-display);
+  font-size: 3em;
+  line-height: 0.5;
+  color: var(--accent-2);
+  vertical-align: -0.4em;
+  margin-left: 0.05em;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* Remove the old ::before/::after dashes on pull-quote */
+.pull-quote:before,
+.pull-quote:after {
+  display: none !important;
+}
+
+/* Signature mark in the footer — italic A.Z. monogram as a colophon */
+.page__footer .page__footer-copyright:before {
+  content: "A.Z.";
+  display: inline-block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--text-base);
+  color: var(--accent-2);
+  margin-right: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+/* Make section titles feel more typographic — small uppercase numeral
+   prefix for each home section ("i.", "ii.", etc.) */
+.home > .home__news .home__section-title > span:first-child:before,
+.home > .home__signature .home__section-title > span:first-child:before,
+.home > .home__feature .feature-panel__eyebrow:before,
+.home > .home__research .home__section-title > span:first-child:before,
+.home > .home__about .home__section-title > span:first-child:before {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-2);
+  margin-right: var(--space-3);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1em;
+}
+.home > .home__news .home__section-title > span:first-child:before { content: "i."; }
+.home > .home__signature .home__section-title > span:first-child:before { content: "ii."; }
+.home > .home__research .home__section-title > span:first-child:before { content: "iii."; }
+.home > .home__about .home__section-title > span:first-child:before { content: "iv."; }
+
+/* Hero: swap the plain eyebrow to something with a handwritten accent */
+.hero__eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--text-base);
+  color: var(--accent-2);
+
+  &:before { content: none; }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent-2);
+    vertical-align: middle;
+    margin-left: var(--space-3);
+    opacity: 0.6;
+  }
+}
+.hero__eyebrow:after {
+  animation: eyebrow-extend 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+@keyframes eyebrow-extend {
+  from { width: 0; opacity: 0; }
+  to { width: 40px; opacity: 0.6; }
+}
+
+/* CTAs: give them a softer handwritten feel on hover */
+.cta--primary {
+  position: relative;
+  &:hover {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent-2);
+  }
+}
+
+/* Raised card shadow — softer, more paper-like */
+.card,
+.signature-card,
+.cert-item,
+.post-card {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 12px 24px -18px rgba(0,0,0,0.12);
+}
+
+/* Small dot trio above the hero name as a typographic dingbat */
+.hero__content:before {
+  content: "·  ·  ·";
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent-2);
+  letter-spacing: 0.5em;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+  opacity: 0.7;
+
+  @media (max-width: 719px) {
+    text-align: center;
+  }
+}
