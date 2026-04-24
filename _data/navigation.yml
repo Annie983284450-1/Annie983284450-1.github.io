@@ -1,11 +1,7 @@
-# Site header navigation. Kept minimal — CV and Blog cover everything else.
-# Certifications (/talks/) and Teaching (/teaching/) pages remain accessible
-# at their URLs but are not linked from the main header; the CV page already
-# lists both sections.
+# Site header navigation. Intentionally minimal — the home page already
+# shows selected research, a research-experience history, and about/education.
+# Publications are on Google Scholar; blog lives at /blog/.
 
 main:
-  - title: "CV"
-    url: /cv/
-
   - title: "Blog"
     url: /blog/
