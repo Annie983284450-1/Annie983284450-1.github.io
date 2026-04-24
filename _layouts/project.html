@@ -7,11 +7,6 @@ layout: default
 <article class="project" itemscope itemtype="http://schema.org/CreativeWork">
   <header class="project__header">
     <a class="project__back" href="{{ base_path }}/#signature">← back to thesis arc</a>
-    <div class="project__meta">
-      {% if page.step %}<span class="project__step">[ {{ page.step }} ]</span>{% endif %}
-      {% if page.venue %}<span class="project__venue">{{ page.venue }}</span>{% endif %}
-      {% if page.date %}<span class="project__year">· {{ page.date | date: "%Y" }}</span>{% endif %}
-    </div>
     <h1 class="project__title">{{ page.title }}</h1>
     {% if page.subtitle %}<p class="project__subtitle">{{ page.subtitle }}</p>{% endif %}
 
@@ -59,9 +54,8 @@ layout: default
         {% for other in others limit: 3 %}
           <li>
             <a href="{{ base_path }}{{ other.url }}">
-              <span class="project__nav-step">{% if other.step %}{{ other.step }}{% else %}→{% endif %}</span>
+              <span class="project__nav-step">→</span>
               <span class="project__nav-title-inner">{{ other.title | split: "—" | first | strip }}</span>
-              {% if other.venue %}<span class="project__nav-venue">{{ other.venue }}</span>{% endif %}
             </a>
           </li>
         {% endfor %}
