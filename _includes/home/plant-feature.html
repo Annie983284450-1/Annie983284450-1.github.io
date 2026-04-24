@@ -1,0 +1,19 @@
+{% include base_path %}
+
+<section class="home__feature home__feature--plant reveal" aria-labelledby="home-plant-title">
+  <div class="feature-panel">
+    <div class="feature-panel__text">
+      <span class="feature-panel__eyebrow">Summer 2025 · NC State</span>
+      <h2 id="home-plant-title" class="feature-panel__title">Multi-task Computer Vision<br><em>for Plant Growth</em></h2>
+      <p class="feature-panel__body">A ConvLSTM encoder–decoder that jointly forecasts plant growth at the pixel level and classifies environmental conditions (drought vs. control). Domain-specific losses — <em>difference</em> and <em>centroid</em> — enforce temporal and geometric consistency in leaf shape and movement across frames.</p>
+      <p class="feature-panel__body">The core methodological contribution is <strong>POI-based bi-polar regression</strong>: a physically meaningful evaluation metric that counts leaf growth vs. shrinkage at the pixel level, complementing SSIM/MSE. We benchmarked against ConvLSTM, PredRNN, PhyDNet and SimVP on the KOMATSUNA dataset, with consistent gains in rank-consistency.</p>
+      <p class="feature-panel__meta">Collaborator · <em>Dr. Yuchen Liu</em>, North Carolina State University</p>
+    </div>
+    <div class="feature-panel__image">
+      <figure>
+        <img src="{{ base_path }}/images/research/plant-growth-sequence.png" alt="Three-panel plot of pixel-of-interest (POI) bi-polar regression on Arabidopsis: POI count predicted vs ground truth, new POIs per frame (growth), missing POIs per frame (shrinkage/error), tracked over sequential frame indices." loading="lazy">
+        <figcaption>POI-based bipolar regression on <em>Arabidopsis</em>, Sample 0 — leaf-area proxy, growth, shrinkage across frames.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

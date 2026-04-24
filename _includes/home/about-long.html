@@ -1,11 +1,15 @@
-<section class="home__about" aria-labelledby="home-about-title">
+<section class="home__about reveal" aria-labelledby="home-about-title">
   <h2 class="home__section-title"><span id="home-about-title">About</span></h2>
   <div class="home__about-body">
-    <p class="home__about-lead">I'm <strong>Anni&nbsp;Zhou</strong> — I earned my Ph.D. in Electrical and Computer Engineering at Georgia Tech in May&nbsp;2025, advised by Dr. Raheem Beyah and Dr. Rishikesan Kamaleswaran. My research builds <em>trustworthy, uncertainty-aware machine learning</em> for clinical decision-making, with an emphasis on early sepsis prediction.</p>
+    <p class="home__about-lead">I'm <strong>Anni&nbsp;Zhou</strong> — I earned my Ph.D. in Electrical and Computer Engineering from Georgia Tech in May&nbsp;2025, advised by <em>Dr.&nbsp;Raheem&nbsp;Beyah</em> and <em>Dr.&nbsp;Rishikesan&nbsp;Kamaleswaran</em>. My research builds <strong>trustworthy, uncertainty-aware machine learning</strong> for clinical decision-making — with an emphasis on early sepsis prediction in the ICU, where a prediction without a calibrated confidence interval isn't safe to act on.</p>
 
-    <p>My thesis — <em>Trustworthy and Robust Early Sepsis Prediction for Intensive Care Unit Patients using Reinforcement Learning and Conformal Prediction</em> — threads together online learning, contextual bandits, and split conformal prediction to give calibrated, actionable confidence bounds at the bedside. Recent work includes <a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a> and <a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a>, both released as preprints in March 2025 with open-source code.</p>
+    <p>My dissertation threads three contributions into one pipeline: <a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a> (a peer-reviewed online framework where heterogeneous ML experts compete for the right to predict the next patient), <a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a> (the same pipeline wrapped in split conformal prediction and a <em>gap-based</em> online selector), and <a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a> (a neural contextual bandit with an LCB bonus calibrated by conformal prediction, for safe offline policy learning).</p>
 
-    <p>Through summer 2025 I worked with Dr. Yuchen Liu at NC State on <em>multi-task computer vision for agriculture</em> — ConvLSTM and encoder–decoder architectures for plant-growth prediction with domain-specific losses on the KOMATSUNA dataset.</p>
+    <blockquote class="pull-quote">
+      <p>A prediction without a calibrated confidence interval is not safe to act on.</p>
+    </blockquote>
+
+    <p>Through summer 2025 I worked with <em>Dr.&nbsp;Yuchen&nbsp;Liu</em> at NC State on <strong>multi-task computer vision for agriculture</strong>: a ConvLSTM encoder–decoder that jointly forecasts plant growth at the pixel level and classifies environmental conditions (drought vs. control). The project introduced a novel <em>Pixel-of-Interest (POI) bi-polar regression</em> metric for physically meaningful evaluation, outperforming ConvLSTM, PredRNN, PhyDNet and SimVP on the KOMATSUNA dataset.</p>
 
     <h3>Education</h3>
     <ul>

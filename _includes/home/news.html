@@ -1,5 +1,5 @@
 {% if site.data.news and site.data.news.size > 0 %}
-<section class="home__news" aria-labelledby="home-news-title">
+<section class="home__news reveal" aria-labelledby="home-news-title">
   <h2 id="home-news-title" class="home__section-title">News</h2>
   <ul class="news__list">
     {% assign news_items = site.data.news | sort: "date" | reverse %}
