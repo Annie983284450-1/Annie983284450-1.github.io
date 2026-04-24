@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Annie Zhou / 周安妮"
+title                    : "Annie Zhou"
 title_separator          : "-"
-name                     : &name "Anni Zhou"
+name                     : &name "Annie Zhou"
 description              : &description "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis. Enthusiastic about advancing AI methodologies for real-world applications."
 url                      : https://Annie983284450-1.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,7 +23,7 @@ repository               : "Annie983284450-1/Annie983284450-1.github.io"
 author:
   # Biographic information
   # original profile.png
-  avatar           : "anniezhou.jpg"
+  avatar           : "anniezhou2.jpg"
   name             : "Annie Zhou"
   pronouns         : # example: "she/her"  
   bio              : "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis."
@@ -272,11 +272,10 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: project
-      author_profile: false
-      body_class: home-page
-      share: false
-      comment: false
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
   # _talks
   - scope:
       path: ""
