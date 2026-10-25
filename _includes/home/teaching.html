@@ -1,0 +1,49 @@
+{% include base_path %}
+
+<section class="home__teaching reveal" aria-labelledby="home-teaching-title">
+  <h2 class="home__section-title"><span id="home-teaching-title">Teaching</span></h2>
+
+  <div class="teaching__grid">
+
+    <!-- ============ NNU · COMP3430 Operating Systems + COMP3430L Lab (current) ============ -->
+    <article class="teaching-card teaching-card--current">
+      <div class="teaching-card__meta">
+        <span class="teaching-card__when"><span class="teaching-card__dot" aria-hidden="true"></span>Now · Fall 2026</span>
+        <span>Northwest Nazarene University</span>
+      </div>
+      <p class="teaching-card__role">Adjunct Professor</p>
+      <h3 class="teaching-card__title">
+        <a href="https://annie983284450-1.github.io/NNU-CS3430-selfstudyguide/" rel="noopener">COMP3430 Operating Systems</a>
+        <span class="teaching-card__title-sub">and COMP3430L Operating Systems Lab</span>
+      </h3>
+      <p class="teaching-card__body">I teach two linked undergraduate courses: the Operating Systems lecture and its lab. The lecture follows <em>Operating Systems: Three Easy Pieces</em>. In the lab, students work on xv6, the teaching kernel from MIT, and change a real kernel step by step. I also write a free self-study guide for both, one guide per week. Every program and output on that site is a real file, captured on a real machine.</p>
+      <div class="teaching-card__actions">
+        <a class="card__action" href="https://annie983284450-1.github.io/NNU-CS3430-selfstudyguide/" rel="noopener">
+          <i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Course site</span>
+        </a>
+        <a class="card__action" href="https://annie983284450-1.github.io/NNU-CS3430-selfstudyguide/labs/" rel="noopener">
+          <i class="fa-solid fa-terminal" aria-hidden="true"></i><span>OS labs on xv6</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- ============ Georgia Tech · CS/ECE 6263 (TA) ============ -->
+    <article class="teaching-card">
+      <div class="teaching-card__meta">
+        <span class="teaching-card__when">2019–2022</span>
+        <span>Georgia Institute of Technology</span>
+      </div>
+      <p class="teaching-card__role">Graduate Teaching Assistant</p>
+      <h3 class="teaching-card__title">
+        <a href="{{ base_path }}/teaching/cs6263">CS/ECE 6263 Cyber-Physical System Security</a>
+      </h3>
+      <p class="teaching-card__body">I worked with the TA team on a graduate course about the security of cyber-physical systems, including industrial control systems and critical infrastructure. I guided students through the tools attackers use to break into such systems, and through tools made for talking to cyber-physical devices.</p>
+      <div class="teaching-card__actions">
+        <a class="card__action" href="{{ base_path }}/teaching/cs6263">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Course details</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
