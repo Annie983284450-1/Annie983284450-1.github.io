@@ -1,11 +1,11 @@
 {% include base_path %}
 
-<section class="home__signature reveal" aria-labelledby="home-signature-title">
+<section id="projects" class="home__signature reveal" aria-labelledby="home-signature-title">
   <h2 class="home__section-title">
-    <span id="home-signature-title">Thesis Arc — Calibrated Uncertainty, in Three Papers</span>
+    <span id="home-signature-title">Selected Projects</span>
   </h2>
 
-  <p class="signature__lede">Three papers on a single idea: sequential decision-making that is <em>honest about its confidence</em>. The setting in my Ph.D. was early sepsis prediction; the methods are portable. Each paper ships with open-source code.</p>
+  <p class="signature__lede">Four projects, one question: how do we build machine learning that is <em>honest about its confidence</em>? Three of them predict sepsis early in the ICU. The fourth forecasts plant growth from images. Each one ships with open-source code.</p>
 
   <div class="signature__grid">
 
@@ -28,9 +28,13 @@
         <img src="{{ base_path }}/images/research/onai-comp-fig.png" alt="OnAI-Comp system infrastructure: an online selection module acting as a trusted third party routes predictions for new and old patients through an offline pool of AI experts via utility scores." loading="lazy">
       </div>
       <div class="signature-card__body">
+        <div class="signature-card__meta">
+          <span class="signature-card__step">Healthcare · Sepsis</span>
+          <span class="signature-card__year">IEEE/ACM TCBB · 2021</span>
+        </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a></h3>
         <p class="signature-card__kicker">A pool of models competes. A trusted selector picks the right one per case.</p>
-        <p class="signature-card__body-text">Many models are better than one — but only if you can tell which one is right for <em>this</em> patient. OnAI-Comp does the telling, with an interpretable explanation for every choice.</p>
+        <p class="signature-card__body-text">Many models are better than one, but only if you can tell which one is right for <em>this</em> patient. OnAI-Comp does the telling, with an interpretable explanation for every choice.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://pubmed.ncbi.nlm.nih.gov/34699366/" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
@@ -63,9 +67,13 @@
         <img src="{{ base_path }}/images/research/sepsyn-olcp-fig.png" alt="Sepsyn-OLCP system overview: training patients feed AI clinicians with split conformal intervals; an online selector routes testing patients with calibrated confidence bounds." loading="lazy">
       </div>
       <div class="signature-card__body">
+        <div class="signature-card__meta">
+          <span class="signature-card__step">Healthcare · Sepsis</span>
+          <span class="signature-card__year">arXiv · 2025</span>
+        </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a></h3>
         <p class="signature-card__kicker">Every prediction ships with a calibrated confidence interval.</p>
-        <p class="signature-card__body-text">Point predictions don't cut it when the cost of being wrong is someone's life. Sepsyn-OLCP wraps the pipeline in split conformal prediction, so the system knows — and says — when it shouldn't be trusted.</p>
+        <p class="signature-card__body-text">Point predictions don't cut it when the cost of being wrong is someone's life. Sepsyn-OLCP wraps the pipeline in split conformal prediction, so the system knows when it shouldn't be trusted, and says so.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.14663" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
@@ -91,15 +99,53 @@
         <img src="{{ base_path }}/images/research/neurosep-fig.png" alt="NeuroSep-CP-LCB system overview: a neural network reward approximator paired with a prediction-interval calculator, learning from training patient data and predicting on testing patient data." loading="lazy">
       </div>
       <div class="signature-card__body">
+        <div class="signature-card__meta">
+          <span class="signature-card__step">Healthcare · Sepsis</span>
+          <span class="signature-card__year">arXiv · 2025</span>
+        </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a></h3>
         <p class="signature-card__kicker">Learn a patient-specific reward model, safely, from offline data alone.</p>
-        <p class="signature-card__body-text">A neural network replaces the model pool — expressive enough to be personal — with a conformal lower-confidence-bound bonus that prevents the policy from wandering into territory the data never visited.</p>
+        <p class="signature-card__body-text">A neural network replaces the model pool, so the policy can be personal. A conformal lower-confidence-bound bonus keeps it from wandering into territory the data never visited.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.16708" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
             <span>Read paper</span>
           </a>
           <a class="card__action" href="https://github.com/Annie983284450-1/NeuralLCB_C" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span>View code</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ Card 04: CAMP (plant growth) ============ -->
+    <article class="signature-card reveal" style="--stagger: 3">
+      <div class="signature-card__figure">
+        <svg class="motif motif--grow" viewBox="0 0 56 36" aria-hidden="true">
+          <!-- plant-size growth curve rising frame by frame -->
+          <path d="M2,32 L54,32" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <rect class="motif__bar" x="6"  y="26" width="7" height="6"  fill="#ffd166"/>
+          <rect class="motif__bar" x="17" y="21" width="7" height="11" fill="#ffd166"/>
+          <rect class="motif__bar" x="28" y="15" width="7" height="17" fill="#ffd166"/>
+          <rect class="motif__bar" x="39" y="8"  width="7" height="24" fill="#ffd166"/>
+        </svg>
+        <img src="{{ base_path }}/images/research/camp-system-overview.png" alt="CAMP framework overview: a sequence of plant images is encoded by stacked PredRNN cells with temporal and depth memory flow; shared features feed a frame prediction branch that outputs future frames and a label prediction branch that classifies drought vs. control." loading="lazy">
+      </div>
+      <div class="signature-card__body">
+        <div class="signature-card__meta">
+          <span class="signature-card__step">AI for Agriculture</span>
+          <span class="signature-card__year">Smart Agric. Tech. · 2026</span>
+        </div>
+        <h3 class="signature-card__title"><a href="/portfolio/portfolio-camp/">CAMP</a></h3>
+        <p class="signature-card__kicker">Forecast how a plant will grow, and check that the forecast is biologically plausible.</p>
+        <p class="signature-card__body-text">CAMP adds a greenness (ExGI) loss and a drought-vs-control classifier to a recurrent video predictor. A new metric, POI-MAE, scores only the plant pixels. On Komatsuna the recipe cuts its backbone's plant-region error by more than half.</p>
+        <div class="signature-card__actions">
+          <a class="card__action" href="https://doi.org/10.1016/j.atech.2026.102318" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
+            <span>Read paper</span>
+          </a>
+          <a class="card__action" href="https://github.com/ARLabXiang/CAMP-Plant" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             <span>View code</span>
           </a>

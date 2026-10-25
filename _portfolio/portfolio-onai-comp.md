@@ -40,14 +40,14 @@ Under standard online-learning assumptions (bounded loss, adversarial experts), 
 
 Every expert is wrapped in **LIME** so that the selected prediction ships with a local feature-attribution explanation. If the selector picks the random forest for patient `xₜ`, the clinician sees not just "sepsis risk 0.87" but "driven by WBC count, MAP drop, lactate trend" — the same features the bedside nurse would already be watching.
 
-## Why it matters for the thesis arc
+## What came next
 
-OnAI-Comp is **Step 01** of my dissertation. Everything that follows builds on the same skeleton:
+Two later projects build on the same skeleton:
 
-- [Sepsyn-OLCP](/portfolio/portfolio-sepsyn-olcp/) **Step 02** wraps this pipeline in split conformal prediction so each pick also ships with a distribution-free confidence interval, and re-casts the selector as a *gap-based* online learner.
-- [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/) **Step 03** replaces the expert pool entirely with a neural network that models the patient-specific reward function directly.
+- [Sepsyn-OLCP](/portfolio/portfolio-sepsyn-olcp/) wraps this pipeline in split conformal prediction so each pick also ships with a distribution-free confidence interval, and re-casts the selector as a *gap-based* online learner.
+- [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/) replaces the expert pool entirely with a neural network that models the patient-specific reward function directly.
 
-OnAI-Comp is the peer-reviewed foundation — the one paper in the arc that is already published (TCBB 2021).
+OnAI-Comp is peer-reviewed and published in IEEE/ACM TCBB (2021).
 
 ## Resources
 

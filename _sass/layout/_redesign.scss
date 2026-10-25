@@ -123,10 +123,12 @@ html[data-theme="dark"] {
 }
 .signature-card:nth-child(2) { --glow-color: 167, 139, 250; }
 .signature-card:nth-child(3) { --glow-color: 255,  77, 126; }
+.signature-card:nth-child(4) { --glow-color: 255, 209, 102; }
 
 html[data-theme="dark"] .signature-card                { --glow-color: 8, 145, 178; }
 html[data-theme="dark"] .signature-card:nth-child(2)   { --glow-color: 124, 58, 237; }
 html[data-theme="dark"] .signature-card:nth-child(3)   { --glow-color: 225, 29, 72; }
+html[data-theme="dark"] .signature-card:nth-child(4)   { --glow-color: 184, 137, 60; }
 
 .signature-card:hover {
   transform:
@@ -359,3 +361,31 @@ html[data-theme="dark"] .signature-card:nth-child(3)   { --glow-color: 225, 29, 
   font-style: italic;
   color: var(--muted-text);
 }
+
+/* --- 6. Figures inside project-page prose (same treatment as the hero figure) */
+
+.project__body figure {
+  margin: var(--space-6) 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--card-border);
+    background: var(--surface-deep);
+    padding: var(--space-4);
+    filter: invert(0.93) hue-rotate(180deg) brightness(1.05);
+  }
+
+  figcaption {
+    font-family: $monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    line-height: 1.55;
+    color: var(--muted-text);
+    margin-top: var(--space-3);
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--accent);
+  }
+}
+html[data-theme="dark"] .project__body figure img { filter: none; }

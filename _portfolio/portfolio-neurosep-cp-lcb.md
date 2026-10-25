@@ -16,13 +16,13 @@ hero_figure_caption: "System overview. A neural network replaces the heterogeneo
 citation: 'Zhou, A., Beyah, R., Kamaleswaran, R. (2025). NeuroSep-CP-LCB: A Deep Learning-based Contextual Multi-armed Bandit Algorithm with Uncertainty Quantification for Early Sepsis Prediction. arXiv:2503.16708.'
 ---
 
-## The endgame of the thesis arc
+## Where this project fits
 
 [OnAI-Comp](/portfolio/portfolio-onai-comp/) selected among pre-trained experts. [Sepsyn-OLCP](/portfolio/portfolio-sepsyn-olcp/) added calibrated intervals and gap-based selection. **NeuroSep-CP-LCB** retires the expert pool entirely.
 
 ## Why get rid of the expert pool?
 
-The pool is expressive, but it has a ceiling. Each individual expert is a static model trained on the full cohort — it can't capture the level of *patient-level heterogeneity* that modern ICU research demands. The thesis's push is toward genuinely patient-specific decisions.
+The pool is expressive, but it has a ceiling. Each individual expert is a static model trained on the full cohort — it can't capture the level of *patient-level heterogeneity* that modern ICU research demands. The goal here is genuinely patient-specific decisions.
 
 The move: let a single neural network directly approximate the expected-reward function `f(xₜ, aₜ)` over the joint space of patient context `xₜ` and action `aₜ`. This is a **neural contextual bandit** — classical contextual-bandit theory with a neural reward approximator slotted in.
 
@@ -56,7 +56,7 @@ The decomposition is what makes the method interesting outside sepsis:
 - **Energy systems.** Building-level demand-response policies trained on logged consumption data.
 - **Agriculture.** Offline image+action logs from cultivation sensors; similar extrapolation concerns.
 
-The thesis setting was sepsis; the method travels.
+The setting here was sepsis. The method travels.
 
 ## Resources
 

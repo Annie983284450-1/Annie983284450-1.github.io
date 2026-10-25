@@ -18,7 +18,7 @@ citation: 'Zhou, A., Beyah, R., Xie, Y., Kamaleswaran, R. (2025). Sepsyn-OLCP: A
 
 ## From point prediction to calibrated interval
 
-[OnAI-Comp](/portfolio/portfolio-onai-comp/) — **Step 01** of this arc — selects among a pool of experts using average-regret scoring. What it doesn't do is tell the clinician *how much to trust the prediction*. In the ICU, a point estimate of sepsis risk without a calibrated interval is not safe to act on.
+[OnAI-Comp](/portfolio/portfolio-onai-comp/), the earlier project, selects among a pool of experts using average-regret scoring. What it doesn't do is tell the clinician *how much to trust the prediction*. In the ICU, a point estimate of sepsis risk without a calibrated interval is not safe to act on.
 
 **Sepsyn-OLCP** (Online Learning with Conformal Prediction) addresses exactly that.
 
@@ -52,7 +52,7 @@ The framework delivers calibrated coverage across the patient cohort while maint
 
 ## Looking ahead
 
-**Step 03** of the arc — [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/) — replaces the heterogeneous expert pool with a neural network that directly models the patient-specific reward function. Same conformal machinery, more expressive reward family.
+The next project, [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/), replaces the heterogeneous expert pool with a neural network that directly models the patient-specific reward function. Same conformal machinery, more expressive reward family.
 
 ## Resources
 

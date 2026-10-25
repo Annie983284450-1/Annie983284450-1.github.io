@@ -266,7 +266,6 @@ body {
 .home > section:nth-of-type(2) > .home__section-title:before { background: var(--accent);   box-shadow: 0 0 12px 0 #{rgba(#64ffda, 0.4)}; }
 .home > section:nth-of-type(3) > .home__section-title:before { background: var(--accent-2); box-shadow: 0 0 12px 0 #{rgba(#ff4d7e, 0.4)}; }
 .home > section:nth-of-type(4) > .home__section-title:before { background: var(--accent-3); box-shadow: 0 0 12px 0 #{rgba(#ffd166, 0.4)}; }
-.home > section:nth-of-type(5) > .home__section-title:before { background: var(--accent-4); box-shadow: 0 0 12px 0 #{rgba(#a78bfa, 0.4)}; }
 
 /* Optional inline trailing link (e.g. "all projects →") in column 3 */
 .home__section-link {
@@ -546,7 +545,7 @@ body {
   perspective: 1200px;
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -581,6 +580,7 @@ body {
   &:nth-child(1):before { background: var(--accent); }
   &:nth-child(2):before { background: var(--accent-4); }
   &:nth-child(3):before { background: var(--accent-2); }
+  &:nth-child(4):before { background: var(--accent-3); }
 }
 
 .signature-card__figure {
@@ -642,6 +642,7 @@ html[data-theme="dark"] .signature-card__figure img {
 }
 .signature-card:nth-child(2) .signature-card__step { color: var(--accent-4); }
 .signature-card:nth-child(3) .signature-card__step { color: var(--accent-2); }
+.signature-card:nth-child(4) .signature-card__step { color: var(--accent-3); }
 
 .signature-card__year { color: var(--muted-text); }
 
@@ -673,6 +674,10 @@ html[data-theme="dark"] .signature-card__figure img {
 .signature-card:nth-child(3) .signature-card__title a {
   background-image: linear-gradient(var(--accent-2), var(--accent-2));
   &:hover { color: var(--accent-2); }
+}
+.signature-card:nth-child(4) .signature-card__title a {
+  background-image: linear-gradient(var(--accent-3), var(--accent-3));
+  &:hover { color: var(--accent-3); }
 }
 
 .signature-card__kicker {
@@ -777,6 +782,19 @@ html[data-theme="dark"] .signature-card__figure img {
   }
 }
 
+.signature-card:nth-child(4) .signature-card__actions .card__action:first-child {
+  background: var(--accent-3-soft);
+  border-color: #{rgba(#ffd166, 0.25)};
+  color: var(--accent-3) !important;
+
+  &:hover {
+    background: var(--accent-3);
+    color: var(--accent-on) !important;
+    border-color: var(--accent-3);
+    box-shadow: 0 0 20px -4px var(--accent-3);
+  }
+}
+
 /* Small "read more →" helper on the title so users know it's clickable */
 .signature-card__title a:after {
   content: " →";
@@ -794,6 +812,7 @@ html[data-theme="dark"] .signature-card__figure img {
 
 .signature-card:nth-child(2) .signature-card__title a:after { color: var(--accent-4); }
 .signature-card:nth-child(3) .signature-card__title a:after { color: var(--accent-2); }
+.signature-card:nth-child(4) .signature-card__title a:after { color: var(--accent-3); }
 
 /* ==========================================================================
    PLANT FEATURE — asymmetric grid, framed figure
@@ -1384,6 +1403,7 @@ a.chip--tag:hover { filter: brightness(1.15); transform: translateY(-1px); }
   .home__signature.is-visible .signature-card:nth-child(1) { animation-delay: 0.2s; }
   .home__signature.is-visible .signature-card:nth-child(2) { animation-delay: 0.35s; }
   .home__signature.is-visible .signature-card:nth-child(3) { animation-delay: 0.5s; }
+  .home__signature.is-visible .signature-card:nth-child(4) { animation-delay: 0.65s; }
 
   @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
 }
@@ -1733,6 +1753,20 @@ html[data-theme="dark"] .project__hero-figure img { filter: none; }
     animation: curve-trace 5s ease-in-out infinite;
   }
   .motif--lcb path:nth-of-type(2) { animation-delay: 0.25s; }
+
+  /* Card 04 — CAMP: growth bars rise in sequence */
+  .motif--grow .motif__bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: bar-grow 4s ease-in-out infinite;
+  }
+  .motif--grow .motif__bar:nth-of-type(2) { animation-delay: 0.2s; }
+  .motif--grow .motif__bar:nth-of-type(3) { animation-delay: 0.4s; }
+  .motif--grow .motif__bar:nth-of-type(4) { animation-delay: 0.6s; }
+  @keyframes bar-grow {
+    0%, 100% { transform: scaleY(0.35); opacity: 0.55; }
+    50%      { transform: scaleY(1);    opacity: 1; }
+  }
 
   @keyframes curve-trace {
     0%   { stroke-dashoffset: 80; opacity: 0.3; }
