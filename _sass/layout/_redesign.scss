@@ -217,16 +217,13 @@ html[data-theme="dark"] .signature-card:nth-child(3)   { --glow-color: 225, 29, 
   opacity: 0.35;
 }
 
-/* --- 5. Teaching — two cards, current role first ------------------------ */
+/* --- 5. Teaching — current role card (kept at a readable width) -------- */
 
 .teaching__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
-
-  @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  max-width: 780px;
 }
 
 .teaching-card {
