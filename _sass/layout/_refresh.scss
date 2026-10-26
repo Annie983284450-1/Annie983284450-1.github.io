@@ -265,7 +265,8 @@ body {
 /* Per-section accent-color rotation for the ornament */
 .home > section:nth-of-type(2) > .home__section-title:before { background: var(--accent);   box-shadow: 0 0 12px 0 #{rgba(#64ffda, 0.4)}; }
 .home > section:nth-of-type(3) > .home__section-title:before { background: var(--accent-2); box-shadow: 0 0 12px 0 #{rgba(#ff4d7e, 0.4)}; }
-.home > section:nth-of-type(4) > .home__section-title:before { background: var(--accent-3); box-shadow: 0 0 12px 0 #{rgba(#ffd166, 0.4)}; }
+.home > section:nth-of-type(4) > .home__section-title:before { background: var(--accent-4); box-shadow: 0 0 12px 0 #{rgba(#a78bfa, 0.4)}; }
+.home > section:nth-of-type(5) > .home__section-title:before { background: var(--accent-3); box-shadow: 0 0 12px 0 #{rgba(#ffd166, 0.4)}; }
 
 /* Optional inline trailing link (e.g. "all projects →") in column 3 */
 .home__section-link {
@@ -371,7 +372,8 @@ body {
   display: block;
   margin-top: var(--space-3);
   height: 18px;
-  width: min(280px, 80%);
+  width: 280px;
+  max-width: 80%;
   background:
     linear-gradient(180deg,
       transparent 0%,
@@ -826,8 +828,8 @@ html[data-theme="dark"] .signature-card__figure img {
   border-bottom: 1px solid var(--card-border);
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding-left: max(var(--space-4), calc(50vw - 560px));
-  padding-right: max(var(--space-4), calc(50vw - 560px));
+  padding-left: unquote("max(var(--space-4), calc(50vw - 560px))");
+  padding-right: unquote("max(var(--space-4), calc(50vw - 560px))");
   position: relative;
   /* Corner grid-coordinate labels were here — removed per user request. */
 }

@@ -1,5 +1,5 @@
 ---
-title: "CAMP — Multi-task Spatio-temporal Modeling for Plant Growth Prediction"
+title: "CAMP: Multi-task Spatio-temporal Modeling for Plant Growth Prediction"
 subtitle: "Forecast what a plant will look like over the next five frames, classify whether it is under drought, and score the forecast only on the pixels that are actually plant."
 collection: portfolio
 permalink: /portfolio/portfolio-camp/
@@ -26,7 +26,7 @@ CAMP (Classification-assisted Multi-task Prediction) tackles both halves: a bett
 CAMP is built on a **PredRNN** backbone, whose spatio-temporal memory flows across both time steps and network depth. On top of the usual frame-reconstruction loss, it adds two auxiliary terms:
 
 - **An ExGI regression loss.** ExGI, the Excess Green Index (`2g − r − b`), highlights leaf pixels. CAMP compares the greenness maps of predicted and true frames, which pushes the model to get the plant itself right.
-- **A drought-vs-control classifier.** A small head on the shared encoder predicts the irrigation condition. Growth under drought looks different from normal growth, so the label gives the encoder useful context.
+- **A drought-vs-control classifier.** A small head on the shared encoder predicts the irrigation condition (drought or control).
 
 The total loss is `L_MSE + 0.1 · L_ExGI + 1.0 · L_BCE`. Two variants are recommended: **CAMP_no_cls** (ExGI loss only) for the best frame prediction, and **CAMP_full** (both terms) when you also want the drought label.
 
@@ -55,14 +55,14 @@ The study benchmarks six baselines (ConvLSTM, PredRNN, PhyDNet, MIM, SimVP, TAU)
   <figcaption>Cross-backbone study on Arabidopsis (Fig. 14 of the paper). Recurrent backbones stay roughly neutral under the auxiliary recipe. Feed-forward backbones degrade by 80% to 159% when classification is trained jointly.</figcaption>
 </figure>
 
-The same heads and losses were attached to two feed-forward backbones (SimVP, TAU) and one more recurrent one (MIM). The recurrent backbones stayed roughly neutral. The feed-forward ones got much worse once classification was trained jointly. Detaching the classifier's gradient recovered the baseline, which isolates the encoder-gradient pathway as the cause. In short, **the CAMP recipe is recurrent-specific**, and the paper says where not to deploy it.
+The same heads and losses were attached to two feed-forward backbones (SimVP, TAU) and one more recurrent one (MIM). The recurrent backbones stayed roughly neutral. The feed-forward ones got much worse once classification was trained jointly. On TAU, detaching the classifier's gradient recovered the baseline, which isolates the encoder-gradient pathway as the cause. In short, **the CAMP recipe is recurrent-specific**, and the paper says where not to deploy it.
 
 The paper is also explicit about scope. Both datasets come from controlled phenotyping cabinets (fixed lighting, top-down camera, one plant per image). Zero-shot transfer between the two datasets hurts every method, and field conditions are the natural next step.
 
 ## Data and setup
 
 - **KOMATSUNA**, a public RGB-D multi-view dataset of Komatsuna plants.
-- **Arabidopsis** time series from the Robotic Assay for Drought (RoAD) phenotyping system, with control and drought groups, cropped to 128 × 128.
+- **Arabidopsis** time series from the Robotic Assay for Drought (RoAD) phenotyping system, with control and drought groups. Each image was cut to a square around the plant and resized to 128 × 128.
 - Plant-level train/test splits, so no plant appears in both. PyTorch on an NVIDIA A5000.
 
 ## Resources

@@ -1,7 +1,11 @@
-# Site header navigation. Intentionally minimal — the home page already
-# shows selected research, a research-experience history, and about/education.
-# Publications are on Google Scholar; blog lives at /blog/.
+# Site header navigation. Each item jumps to a section of the home page.
 
 main:
-  - title: "Blog"
-    url: /blog/
+  - title: "About"
+    url: /#about
+  - title: "Projects"
+    url: /#projects
+  - title: "Publications"
+    url: /#publications
+  - title: "Teaching"
+    url: /#teaching

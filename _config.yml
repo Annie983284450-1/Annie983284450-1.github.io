@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Annie Zhou"
+title                    : "Anni (Annie) Zhou"
 title_separator          : "-"
-name                     : &name "Annie Zhou"
-description              : &description "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis. Enthusiastic about advancing AI methodologies for real-world applications."
+name                     : &name "Anni (Annie) Zhou"
+description              : &description "Anni (Annie) Zhou is an Adjunct Professor of Computer Science at Northwest Nazarene University. Her research covers trustworthy machine learning with uncertainty quantification for early sepsis prediction in the ICU, and multi-task deep learning for plant growth forecasting."
 url                      : https://Annie983284450-1.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Annie983284450-1/Annie983284450-1.github.io"
@@ -26,17 +26,17 @@ author:
   avatar           : "anniezhou2.jpg"
   name             : "Annie Zhou"
   pronouns         : # example: "she/her"  
-  bio              : "Passionate researcher with 8+ years of experience in predictive and statistical modeling, machine learning, and data analysis."
+  bio              : "Adjunct Professor of Computer Science at Northwest Nazarene University. Trustworthy machine learning with uncertainty quantification."
   location         : # "Earth"
-  # employer         : "Ph.D. '25 · Georgia Institute of Technology"
+  employer         : "Adjunct Professor · Northwest Nazarene University"
   uri              : # URL
-  email            : "zhou.annie@gatech.edu"
+  email            : "azhou@nnu.edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=g_gIBgMAAAAJ&hl=en&oi=sra"
   impactstory      : # URL
-  orcid            : " https://orcid.org/0000-0001-9295-1660" # URL
+  orcid            : "https://orcid.org/0000-0001-9295-1660" # URL
   semantic         : # URL
   pubmed           : # URL
   researchgate     : # URL
@@ -186,6 +186,15 @@ exclude:
   - README
   - tmp
   - vendor
+  # repo tooling, not part of the website
+  - CONTRIBUTING.md
+  - docker-compose.yaml
+  - markdown_generator
+  - scripts
+  - talkmap
+  - talkmap.ipynb
+  - talkmap.py
+  - talkmap_out.ipynb
 keep_files:
   - .git
   - .svn
@@ -219,13 +228,13 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
-    output: true
+    output: false   # listed on the home page; each entry links to its DOI or arXiv page
     permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false   # certificates kept in the repo but not published
     permalink: /:collection/:path/
  
 
@@ -272,7 +281,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: project
       author_profile: true
       share: true
       comment: true
@@ -295,8 +304,8 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 10                       # amount of blog posts to show per page
-paginate_path: /blog/page:num/     # keeps the pretty /blog/ URL for the first page
+# paginate: 10                     # blog paused; re-enable together with _pages/blog.html
+# paginate_path: /blog/page:num/
 timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 

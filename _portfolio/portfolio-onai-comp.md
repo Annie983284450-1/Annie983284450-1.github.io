@@ -1,55 +1,56 @@
 ---
-title: "OnAI-Comp — Online AI Experts Competing for Early Sepsis Detection"
-subtitle: "A peer-reviewed framework where a pool of ML experts competes online; a trusted selector picks the best one for each incoming patient, with per-prediction interpretability."
+title: "OnAI-Comp: Online AI Experts Competing for Early Sepsis Detection"
+subtitle: "A multi-armed bandit learns, as new ICU patients arrive, which pre-trained model's sepsis prediction to trust, without retraining any of the models."
 collection: portfolio
 permalink: /portfolio/portfolio-onai-comp/
-date: 2021-10-26
-step: "Step 01 / 2021"
-venue: "IEEE/ACM Transactions on Computational Biology and Bioinformatics"
-paperurl: "https://pubmed.ncbi.nlm.nih.gov/34699366/"
+date: 2022-11-01
+venue: "IEEE/ACM Transactions on Computational Biology and Bioinformatics, 19(6), 2022"
+paperurl: "https://doi.org/10.1109/TCBB.2021.3122405"
 codeurl: "https://github.com/Annie983284450-1/OnAI-Comp"
 featured: true
 link: "https://github.com/Annie983284450-1/OnAI-Comp"
 hero_figure: "onai-comp-fig.png"
-hero_figure_alt: "OnAI-Comp system infrastructure. An Online Selection Module acting as a Third Trusted Party routes predictions for New Patients through an Offline AI experts Module seeded by Old Patients; utility scores flow from the experts back to the selector."
-hero_figure_caption: "System infrastructure. The Online Selection Module routes each new patient through the most competitive expert from the offline pool, using utility scores to keep the ranking honest."
-citation: 'Zhou, A., Beyah, R., Kamaleswaran, R. (2021). OnAI-Comp: An online AI experts competing framework for early sepsis detection. IEEE/ACM Transactions on Computational Biology and Bioinformatics, 19(6), 3595–3603.'
+hero_figure_alt: "OnAI-Comp system infrastructure. An online selection module, acting as a trusted third party, receives new patients and gets predictions from an offline module of pre-trained AI experts built from old patients. Utility scores go from the selection module to the experts module."
+hero_figure_caption: "System infrastructure (Fig. 1 of the paper). The online selection module acts as a trusted third party. It sends each new patient to the pool of pre-trained AI experts and uses their utility scores to decide whose prediction to share."
+citation: 'Zhou, A., Beyah, R., Kamaleswaran, R. (2022). OnAI-Comp: An online AI experts competing framework for early sepsis detection. IEEE/ACM Transactions on Computational Biology and Bioinformatics, 19(6), 3595–3603. https://doi.org/10.1109/TCBB.2021.3122405'
 ---
 
 ## The problem
 
-Early sepsis prediction in the ICU is an awkward machine-learning setting:
+Most sepsis-prediction models are trained once, offline, on retrospective data. In a real hospital the data keeps growing as new patients arrive. Using that new data to improve an offline model means retraining it, which is computationally expensive. OnAI-Comp makes use of the new data without retraining any model.
 
-- **No single model is universally best.** Gradient boosting, random forests, logistic regression, LSTMs — each captures different aspects of patient trajectories. Ensembling with static weights throws away the signal that *which* model is right is itself patient-specific.
-- **Data distributions drift.** A hospital's patient mix shifts over time; last year's best model may be this year's worst.
-- **Clinicians don't accept black boxes.** Any prediction the system surfaces must come with an explanation a human can audit.
+## How it works
 
-OnAI-Comp proposes an online learning framework that handles all three simultaneously.
+- **AI experts.** Several machine-learning models are trained offline on the same training data. Each one predicts a patient's risk of developing sepsis.
+- **A trusted third party.** For each new patient, a trusted third party (for example, a hospital) collects every expert's prediction and decides which one to share with clinicians.
+- **A multi-armed bandit.** Each expert is one arm of a stochastic multi-armed bandit. The selector uses the Upper Confidence Bound (UCB) rule. It favors experts with a high average utility score so far, plus a bonus for experts it has chosen less often, which balances exploitation and exploration.
+- **Reward.** Once the outcome is known, each expert receives a utility score computed with the PhysioNet 2019 Challenge utility function, and the bandit's estimates are updated before the next patient arrives.
 
-## Architecture
+The paper derives an upper bound on the expected average regret (Lemma 1 and Theorem 1).
 
-Three modules, communicating through a light protocol:
+## Results
 
-- **Offline AI Experts Module.** A heterogeneous pool `{A₁, …, A_K}` of pre-trained ML experts — XGBoost, random forest, logistic regression, and deep sequence models — each optimised on a shared training cohort of prior (old) patients.
-- **Online Selection Module** acting as a **Third Trusted Party**. At each decision step it receives the current new patient's features `xₜ` and queries the expert pool. Each expert returns a prediction. The selector evaluates the running **average regret** of each expert against recent ground truth and picks the one whose cumulative regret is lowest — the best expert *in hindsight*.
-- **Utility score feedback.** After the outcome is observed, a utility score flows back to the expert pool, updating the regret tally.
-
-Under standard online-learning assumptions (bounded loss, adversarial experts), the selector converges to the best expert in hindsight with **sublinear regret** — so clinicians get a single decision per patient that still inherits the diversity of the full pool.
+- **Data.** The 2019 PhysioNet/Computing in Cardiology Challenge dataset: 40,336 patient records with more than 40 hourly features, from ICU patients in three hospital systems.
+- **Experts.** XGBoost, a support vector machine, random forest and logistic regression, plus a random-guess dummy expert for comparison.
+- **Convergence.** Average regret converged within the first 500 rounds for every combination of experts tested.
+- **Against an offline model.** In an online comparison, OnAI-Comp outperformed the best standalone offline expert (XGBoost).
 
 ## Interpretability
 
-Every expert is wrapped in **LIME** so that the selected prediction ships with a local feature-attribution explanation. If the selector picks the random forest for patient `xₜ`, the clinician sees not just "sepsis risk 0.87" but "driven by WBC count, MAP drop, lactate trend" — the same features the bedside nurse would already be watching.
+Each expert can explain its own predictions. The paper demonstrates this with LIME on the random forest, showing how each feature pushed the prediction toward septic or non-septic across a patient's ICU stay.
+
+## Limitations noted in the paper
+
+- The experts are traditional machine-learning models. Recurrent models such as LSTMs are left for future work.
+- Like most bandits, OnAI-Comp has a cold-start period, so early predictions are less reliable. The paper suggests withholding early outputs until the selector has converged.
 
 ## What came next
 
-Two later projects build on the same skeleton:
-
-- [Sepsyn-OLCP](/portfolio/portfolio-sepsyn-olcp/) wraps this pipeline in split conformal prediction so each pick also ships with a distribution-free confidence interval, and re-casts the selector as a *gap-based* online learner.
-- [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/) replaces the expert pool entirely with a neural network that models the patient-specific reward function directly.
-
-OnAI-Comp is peer-reviewed and published in IEEE/ACM TCBB (2021).
+- [Sepsyn-OLCP](/portfolio/portfolio-sepsyn-olcp/) gives each expert's prediction a conformal prediction interval, and uses a gap-based bandit to choose among the experts.
+- [NeuroSep-CP-LCB](/portfolio/portfolio-neurosep-cp-lcb/) replaces the pool of experts with a neural network that models the reward directly, learned from offline data.
 
 ## Resources
 
-- [Paper (PubMed 34699366)](https://pubmed.ncbi.nlm.nih.gov/34699366/)
+- [Paper (DOI 10.1109/TCBB.2021.3122405)](https://doi.org/10.1109/TCBB.2021.3122405)
+- [Free full text (PubMed Central)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10975783/)
 - [Code (`Annie983284450-1/OnAI-Comp`)](https://github.com/Annie983284450-1/OnAI-Comp)

@@ -55,7 +55,7 @@ layout: default
           <li>
             <a href="{{ base_path }}{{ other.url }}">
               <span class="project__nav-step">→</span>
-              <span class="project__nav-title-inner">{{ other.title | split: "—" | first | strip }}</span>
+              <span class="project__nav-title-inner">{{ other.title | split: ":" | first | strip }}</span>
             </a>
           </li>
         {% endfor %}

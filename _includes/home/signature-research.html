@@ -5,7 +5,7 @@
     <span id="home-signature-title">Selected Projects</span>
   </h2>
 
-  <p class="signature__lede">Four projects, one question: how do we build machine learning that is <em>honest about its confidence</em>? Three of them predict sepsis early in the ICU. The fourth forecasts plant growth from images. Each one ships with open-source code.</p>
+  <p class="signature__lede">Four projects, each with open-source code. Three predict sepsis early in the ICU with multi-armed bandits, and two of those attach <em>conformal prediction intervals</em> to every prediction. The fourth forecasts plant growth from images and checks that the forecast is biologically plausible.</p>
 
   <div class="signature__grid">
 
@@ -25,18 +25,18 @@
           <circle class="motif__pick motif__pick-3" cx="34" cy="18" r="4" fill="#64ffda" opacity="0"/>
           <circle class="motif__pick motif__pick-4" cx="46" cy="18" r="4" fill="#64ffda" opacity="0"/>
         </svg>
-        <img src="{{ base_path }}/images/research/onai-comp-fig.png" alt="OnAI-Comp system infrastructure: an online selection module acting as a trusted third party routes predictions for new and old patients through an offline pool of AI experts via utility scores." loading="lazy">
+        <img src="{{ base_path }}/images/research/onai-comp-fig.png" alt="OnAI-Comp system infrastructure: an online selection module, acting as a trusted third party, receives new patients and gets predictions from an offline module of pre-trained AI experts built from old patients; utility scores go from the selection module to the experts module." loading="lazy">
       </div>
       <div class="signature-card__body">
         <div class="signature-card__meta">
           <span class="signature-card__step">Healthcare · Sepsis</span>
-          <span class="signature-card__year">IEEE/ACM TCBB · 2021</span>
+          <span class="signature-card__year">IEEE/ACM TCBB · 2022</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-onai-comp/">OnAI-Comp</a></h3>
-        <p class="signature-card__kicker">A pool of models competes. A trusted selector picks the right one per case.</p>
-        <p class="signature-card__body-text">Many models are better than one, but only if you can tell which one is right for <em>this</em> patient. OnAI-Comp does the telling, with an interpretable explanation for every choice.</p>
+        <p class="signature-card__kicker">A bandit learns which pre-trained model to trust, without retraining any of them.</p>
+        <p class="signature-card__body-text">Sepsis models are usually trained once and then frozen. OnAI-Comp treats several pre-trained models as arms of a multi-armed bandit and learns online, as new ICU patients arrive, whose prediction to share.</p>
         <div class="signature-card__actions">
-          <a class="card__action" href="https://pubmed.ncbi.nlm.nih.gov/34699366/" rel="noopener">
+          <a class="card__action" href="https://doi.org/10.1109/TCBB.2021.3122405" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
             <span>Read paper</span>
           </a>
@@ -64,7 +64,7 @@
           <path d="M2,18 Q14,10 28,18 T54,18" fill="none" stroke="#a78bfa" stroke-width="1.4"/>
           <circle cx="28" cy="18" r="2" fill="#a78bfa"/>
         </svg>
-        <img src="{{ base_path }}/images/research/sepsyn-olcp-fig.png" alt="Sepsyn-OLCP system overview: training patients feed AI clinicians with split conformal intervals; an online selector routes testing patients with calibrated confidence bounds." loading="lazy">
+        <img src="{{ base_path }}/images/research/sepsyn-olcp-fig.png" alt="Sepsyn-OLCP system overview: AI clinicians are trained offline on training patients, a prediction interval calculator adds intervals to their predictions, and an online selector acting as a trusted third party chooses among them for testing patients." loading="lazy">
       </div>
       <div class="signature-card__body">
         <div class="signature-card__meta">
@@ -72,8 +72,8 @@
           <span class="signature-card__year">arXiv · 2025</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-sepsyn-olcp/">Sepsyn-OLCP</a></h3>
-        <p class="signature-card__kicker">Every prediction ships with a calibrated confidence interval.</p>
-        <p class="signature-card__body-text">Point predictions don't cut it when the cost of being wrong is someone's life. Sepsyn-OLCP wraps the pipeline in split conformal prediction, so the system knows when it shouldn't be trusted, and says so.</p>
+        <p class="signature-card__kicker">Every expert's prediction comes with a conformal prediction interval.</p>
+        <p class="signature-card__body-text">The intervals come from an ensemble method that avoids retraining the models, and a gap-based bandit uses them to choose which expert to trust. Combining experts raised AUROC from 0.649 (neural network alone) to 0.736.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.14663" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>
@@ -104,8 +104,8 @@
           <span class="signature-card__year">arXiv · 2025</span>
         </div>
         <h3 class="signature-card__title"><a href="/portfolio/portfolio-neurosep-cp-lcb/">NeuroSep-CP-LCB</a></h3>
-        <p class="signature-card__kicker">Learn a patient-specific reward model, safely, from offline data alone.</p>
-        <p class="signature-card__body-text">A neural network replaces the model pool, so the policy can be personal. A conformal lower-confidence-bound bonus keeps it from wandering into territory the data never visited.</p>
+        <p class="signature-card__kicker">Learn a patient-specific reward model from offline data alone.</p>
+        <p class="signature-card__body-text">A neural network models the reward from each patient's features. Actions are chosen by maximizing a lower confidence bound, and conformal intervals report how uncertain each prediction is.</p>
         <div class="signature-card__actions">
           <a class="card__action" href="https://arxiv.org/abs/2503.16708" rel="noopener">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 1h6l4 4v10H2V1h2zm6 1v4h4l-4-4z"/></svg>

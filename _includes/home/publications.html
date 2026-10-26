@@ -1,0 +1,32 @@
+{% include base_path %}
+{% assign pubs = site.publications | sort: "date" | reverse %}
+
+<section id="publications" class="home__publications reveal" aria-labelledby="home-publications-title">
+  <h2 class="home__section-title"><span id="home-publications-title">Publications</span></h2>
+
+  {% assign groups = "peer|Peer-reviewed,preprint|Preprints,thesis|Dissertation" | split: "," %}
+  {% for g in groups %}
+    {% assign parts = g | split: "|" %}
+    {% assign kind = parts[0] %}
+    {% assign items = pubs | where: "kind", kind %}
+    {% if items.size > 0 %}
+      <h3 class="pubs__group">{{ parts[1] }}</h3>
+      <ol class="pubs">
+        {% for p in items %}
+          <li class="pub">
+            <span class="pub__year">{{ p.year }}</span>
+            <div class="pub__main">
+              <a class="pub__title" href="{{ p.paperurl }}" rel="noopener">{{ p.title }}</a>
+              <p class="pub__authors">{{ p.authors }}</p>
+              <p class="pub__venue"><em>{{ p.venue }}</em>{% if p.details and p.details != "" %}, {{ p.details }}{% endif %}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+  {% endfor %}
+
+  {% if site.author.googlescholar %}
+    <p class="pubs__more">Citation counts are on <a href="{{ site.author.googlescholar }}" rel="noopener">Google Scholar</a>.</p>
+  {% endif %}
+</section>
