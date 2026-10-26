@@ -1,11 +1,11 @@
-# Site header navigation. Each item jumps to a section of the home page.
+# Site header navigation. The first three items jump to sections of the home page.
 
 main:
   - title: "About"
     url: /#about
   - title: "Projects"
     url: /#projects
-  - title: "Publications"
-    url: /#publications
   - title: "Teaching"
     url: /#teaching
+  - title: "Google Scholar"
+    url: https://scholar.google.com/citations?user=g_gIBgMAAAAJ&hl=en&oi=sra

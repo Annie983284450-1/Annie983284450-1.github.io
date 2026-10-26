@@ -265,8 +265,7 @@ body {
 /* Per-section accent-color rotation for the ornament */
 .home > section:nth-of-type(2) > .home__section-title:before { background: var(--accent);   box-shadow: 0 0 12px 0 #{rgba(#64ffda, 0.4)}; }
 .home > section:nth-of-type(3) > .home__section-title:before { background: var(--accent-2); box-shadow: 0 0 12px 0 #{rgba(#ff4d7e, 0.4)}; }
-.home > section:nth-of-type(4) > .home__section-title:before { background: var(--accent-4); box-shadow: 0 0 12px 0 #{rgba(#a78bfa, 0.4)}; }
-.home > section:nth-of-type(5) > .home__section-title:before { background: var(--accent-3); box-shadow: 0 0 12px 0 #{rgba(#ffd166, 0.4)}; }
+.home > section:nth-of-type(4) > .home__section-title:before { background: var(--accent-3); box-shadow: 0 0 12px 0 #{rgba(#ffd166, 0.4)}; }
 
 /* Optional inline trailing link (e.g. "all projects →") in column 3 */
 .home__section-link {

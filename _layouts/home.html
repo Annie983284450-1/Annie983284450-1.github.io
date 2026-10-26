@@ -8,10 +8,10 @@ layout: default
   {% include home/hero.html %}
   {% include home/about-long.html %}
   {% include home/signature-research.html %}
-  {% include home/publications.html %}
   {% include home/teaching.html %}
 
-  {% if content and content != "" %}
+  {% assign extra = content | strip %}
+  {% if extra != "" %}
     <section class="home__extra">{{ content }}</section>
   {% endif %}
 </div>
